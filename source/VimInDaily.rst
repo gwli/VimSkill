@@ -48,7 +48,7 @@ Vim 的日常应用
       Signer name :               Microsoft Windows Hardware Compatibility Publisher
 
  
- 用vim 来搞定
+用vim 来搞定
  
  #. 建立一个 clean.bat 文件
     
@@ -57,12 +57,12 @@ Vim 的日常应用
  
  #. 用vim 打开输入以下命令
 
- .. code-block:: vim
+    .. code-block:: vim
     
-    :let i=0
-    :g/XX/s/XX/\=i/g |let i=i+1
-    :wq
+       :let i=0
+       :g/XX/s/XX/\=i/g |let i=i+1
+       :wq
 
-#. 执行clean.bat 就OK了。    
+ #. 执行clean.bat 就OK了。    
 
 
