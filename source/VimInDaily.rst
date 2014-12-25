@@ -53,12 +53,14 @@ Vim 的日常应用
  #. 建立一个 clean.bat 文件
     
     .. code-block:: dos
-    pnputil -f -d oemXX.inf
+
+       pnputil -f -d oemXX.inf
  
  #. 用vim 打开输入以下命令
 
     .. code-block:: vim
     
+       yy10p
        :let i=0
        :g/XX/s/XX/\=i/g |let i=i+1
        :wq
