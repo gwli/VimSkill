@@ -111,3 +111,133 @@ http://www.softpanorama.org/Editors/Vimorama/vim_piping.shtml
 
    * `vim 寄存器 <http://www.cnblogs.com/chenyadong/archive/2011/07/11/2103249.html>`_  %IF{" '利用Vi &#61; 表达式可实现自线计算' = '' " then="" else="- "}%利用Vi &#61; 表达式可实现自线计算
 
+
+
+
+
+How to get insert date or time
+
+   #. one is use strftime("%y-%m-%d") [VimWiki]_
+   #. use the python time and calendar module :py:mod:`time` and :py:mod:`calendar`
+
+.. [VimWiki] http://vim.wikia.com/wiki/Insert_current_date_or_time
+
+
+How to replace tab with blank::
+
+   set autoindent
+   set shiftwidth=4
+   set tabstop=4
+   :%retab  //to replace the tab 
+
+
+
+14-07-10
+--------
+
+如何跳转文件go to file(gf)
+**************************
+简单配置一下，可以直接find,grep,并且goto file,vim自身的文档就是利用这个。 这个就是vim file searching rule. 这个可以参考 `editing.txt这个可以参考 `editing.txt`.
+设置一下suffixes, `set suffixesadd=.rst`
+
+如何统计选中多少字，词，行，以及字节数
+**************************************
+这个特别是在统计查看文本的统计数据的特别有用。`{Visual}g  CTRG-G`. 就可以显示了。
+
+如何改当前的文件名
+******************
+`:file {name}` 就会改当前文件名。
+
+如何在一个新窗口查看一个文件
+****************************
+`CTRL-W_CTRL-F`就可以了。
+
+如何打开搜索后文件
+******************
+用`就可以了，并且`=就执行函数。
+
+
+14-07-14
+--------
+
+如何列式操作
+************
+
+直接ctrl-v就变成例模式，并且在搜索的时候/\%<23v 就是例模式可以通过`:help \%`得到。
+
+
+如何重定向的命令的输出
+**********************
+利用`:redir`来进行控制，或者直接通过quifix window操作::
+
+    cexpr system("ls -al") |copen
+    :redir @a
+    :g//
+    :redir END
+    :new 
+    :put! a
+ 
+
+2014-07-25
+----------
+
+如何执行shell
+*************
+
+这个直接使用conque_term就行了，并且直接利用python为vim开发插件还是容易的，并且`musicbox.vim` 利用gstrem 的python 库直接来实现mp3 播放器。
+并且vim 的python中也有vim接口。例如 b=vim.buffer[0]
+并且还可以pyfile加载python的模块，并且pydo执行过滤操作。
+
+easytags 非常慢的问题
+*********************
+
+直接升级到新版本就好了。这也是解决问题最简单与常用的办法。
+
+
+sort in vim
+***********
+自己想要功能，过滤，数字，十六进制，反序，去重复等等功能，这里都有，这样自己以后不需要每一次多步去做了。并且自己经常用的表达式给记录一下。并做成快捷键。
+但是shell的排序功能没有分字段与分组的功能，这个可以通过正则表达式来解决。所以功能可以通过`:help sort` 来得到。
+
+
+2014-07-26
+----------
+
+如何另外的打开窗口
+******************
+vim 支持窗口的任意切开，其实所谓taglist也就是么干的。主要 是`ctrl-W`来控制，上下左右的切，并且交换buffer,以及位置都是很方便的。并且例如VS2013中的Peek也是很容易的。
+`sfind` 直接开窗口
+`top {cmd}` 可以打开一个新窗口执行命令。
+并且还有preview的功能。
+
+远程编辑
+********
+
+网速慢的时候，以及想充分利用自己本地vim环境时，可以直接像untralEdit一样远程编辑。`edit remote file by vim <http://tigerlee.me/p/edit-remote-file-by-vim/>`_ . 
+
+但是如vimserver是什么还是没有搞明白。
+现在明白了，可以给已经打开vim发送命令。另外查看原始字符可以使用`set list`来查看。
+
+如何用perldoc在vim里
+********************
+
+其实也很简单,直接另开一个窗口::
+  
+    :function Mfunc(myarg)
+    :let s:text = a:myarg
+    :if exists(s:text)||strlen(s:text)!=0
+    :top new "perl help"
+    :let s:doc = system("perldoc -t ".s:text)
+    :put! = s:doc
+    :else
+    :echo "no topic"
+    :endif
+    :endfunction
+
+    :command -nargs=? My :call Mfunc('<args>')
+    :map <F2> :execute ":My " . expand("<cWORD>")<CR>gg
+    :map <F3> :q!<CR>
+
+
+
+
