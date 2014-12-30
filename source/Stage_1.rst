@@ -4,6 +4,15 @@
 
 能在网上找到教程，就不在这里啰嗦了，直接给链接，这里只介绍网上找到或很能找到以及自己的一些心得
 
+网上已经相当多的文档了，来介绍的初级水平的，相对比较好的，大可以从 `简明Vim 练习攻略 <http://coolshell.cn/articles/5426.html>`_ . 如果英语好，可以直接原文 `Learn-Vim-Progressively <http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/>`_ .
+
+vim 自身也有很好的教程， 直接查询usermanual中，getStarted 教程，从user_01.txt ~ user_45.txt 一课一课学习就练习就行了。
+这里只介绍原理帮助理解与提高,以及遇到常见的困惑。
+
+vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热心的vim fan提供了一个小游戏来练习了，http://vim-adventures.com/ 
+当然如果你觉得自己一的vim水平还可以，那就来自测一下 `Best of Vim Tips <http://www.rayninfo.co.uk/vimtips.html >`_ . 这是一个用了vim 22年 老法师的总结，看看你能看懂会用多少。
+能看40% 说明你已经过了初级了.
+
 安装
 ====
 
@@ -13,17 +22,17 @@
 vim 工作模式与原理
 ==================
 
-网上已经相当多的文档了，来介绍的初级水平的，相对比较好的，大可以从 ` 简明Vim 练习攻略 <http://coolshell.cn/articles/5426.html>`_ . 如果英语好，可以直接原文`Learn-Vim-Progressively <http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/>`_ .
+vim 主要模式有以几种，为什么要区别这些模式，给你一个notepad，然后你想实现一些功能，不是通过菜单项来实现(这个是常见的windows模式)，另一种那快捷键模式，emacs/vim都是采用快捷键的模式，功能众多，如何组织这些快捷键，vim 采用模式+单字符的快速键，emacs采用的组合键的模式。相比较而言，vim的按键次数要少于emacs.
 
-vim 自身也有很好的教程， 直接查询usermanual中，getStarted 教程，从user_01.txt ~ user_45.txt 一课一课学习就练习就行了。
-这里只介绍原理帮助理解与提高,以及遇到常见的困惑。
 
-vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热心的vim fan提供了一个小游戏来练习了，http://vim-adventures.com/ 
-当然如果你觉得自己一的vim水平还可以，那就来自测一下 `Best of Vim Tips <http://www.rayninfo.co.uk/vimtips.html >`_ . 这是一个用了vim 22年 老法师的总结，看看你能看懂会用多少。
-能看40% 说明你已经过了初级了.
+.. csv-table:: vim mode
+   :header: mode, abbr,remark
 
-mode
-----
+   Normal mode, n, 默认的模式，不可以编辑，但可以上下左右移动以及跳转
+   Visual mode, v, 编辑选择模式，这个对于块操作会特别有用，可以按行选，也可以按列选
+   Insert mode, i, 这个就是一般编辑器可以输入文字了
+   Command-line mode, c, 就是那些Ex commands(":"),以及搜索/,?,以手filter command(!).
+   
 
 buffer,window,tab
 -----------------
