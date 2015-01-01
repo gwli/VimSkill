@@ -42,6 +42,7 @@ vim 用模式简化操作，进入模式入大部分的命令都是单字符的�
 
 vim 的一些资源 
 ==============
+
 #. vim 官网
 #. vim wiki
 #. vim IRC, email group
