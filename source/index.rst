@@ -13,6 +13,8 @@ Contents:
    
    Introduction  
    VimInDaily
+   Stage_1
+   Stage_2
    Stage_3
 
 
