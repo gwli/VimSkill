@@ -38,50 +38,11 @@ buffer,window,tab
 -----------------
 
 
-vim 配制文件的结构
-------------------
-*vimrc location*
-when you compile you set the default search location.
-<verbatim>
-make CPPFLAGS=-DSYS_VIMRC_FILE=\\\"/etc/vim/vimrc\\\": setting this cause vim to look for the /etc/vimrc file that containts the global vim settings. Normally this file is looked for in /usr/share/vim.
-</verbatim>
 
--- Main.GangweiLi - 15 Apr 2013
+include Stage_1\vim_configurationManagement
+inlcude Stage_1\vim_projectManagement
 
 
-
-
-
-各种IDE的打造 
-
-Make vim as IDE for python
---------------------------
-
-   * `pydiction <http://www.vim.org/scripts/script.php?script_id=850>`_   使用tab键来进行字典匹配，并且可以自己生成自己。
-   * `python语法文件 <http://www.vim.org/scripts/script.php?script_id=790>`_ 
-   * `ctags的增强版本，自动生成tags 文件 <http://www.vim.org/scripts/script.php?script_id=3114>`_ 
-   * `vim-as-your-ide for python <http://haridas.in/vim-as-your-ide.html>`_ 
-   * `his is the pythoncomplete omni-completion script shipped with vim 7.  Updated versions will appear here, as the vim tarballs do not ship with updated runtime files.  <http://www.vim.org/scripts/script.php?script_id=1542>`_ 
-   * `pydoc 命令 <http://www.vim.org/scripts/script.php?script_id=910>`_ 
-
-数据库的IDE
------------
-
-   * `dbtext.vim <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;356>`_  %IF{" '可以通过这个插件去访问各种数据库' = '' " then="" else="- "}%可以通过这个插件去访问各种数据库
-   
-
-
-
--- Main.GangweiLi - 19 Jun 2012
-
-
-*speed up looping through all buffers* 
-The buffer switch is loading the next buffer, and maybe processing autocommands for the buffer.
->
- If you are going to be processing the same files repeatedly, :set hidden will load them only the first time.
-Using :bufdo always suppresses syntax autocommands, and is a clean way to loop through the buffers. 
-
--- Main.GangweiLi - 21 Jun 2012
 
 
 *\%* 这是一个range限定词, *\@* 是一个条件词作用相当于\ze \zs 但是它有一个不同那就是它可以使用反逻辑。\@! Match with zero width if the preceding atoms does not match at the current position.
