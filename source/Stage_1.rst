@@ -2,7 +2,7 @@
 初级篇
 ######
 
-能在网上找到教程，就不在这里啰嗦了，直接给链接，这里只介绍网上很能找到或者找不到以及自己的一些心得
+能在网上找到教程，就不在这里啰嗦了，直接给链接，这里只介绍网上很难找到或者找不到以及自己的一些心得
 
 网上已经相当多的文档了，来介绍的初级水平的，相对比较好的，大可以从 `简明Vim 练习攻略 <http://coolshell.cn/articles/5426.html>`_ . 如果英语好，可以直接原文 `Learn-Vim-Progressively <http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/>`_ .
 
@@ -39,8 +39,8 @@ buffer,window,tab
 
 
 
-.. include:: Stage_1/vim_configurationManagement
-.. inlcude:: Stage_1/vim_projectManagement
+.. include:: Stage_1/vim_configurationManagement.rst
+.. inlcude:: Stage_1/vim_projectManagement.rst
 
 
 
