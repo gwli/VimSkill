@@ -29,7 +29,7 @@ vim 主要模式有以几种，为什么要区别这些模式，给你一个note
    :header: mode, abbr,remark
 
    Normal mode, n, 默认的模式，不可以编辑，但可以上下左右移动以及跳转
-   Visual mode, v, 编辑选择模式，这个对于块操作会特别有用，可以按行选，也可以按列选
+   Visual mode, v, 编辑选择模式，这个对于块操作会特别有用，可以按行选，也可以按列选，以及按照字符选择
    Insert mode, i, 这个就是一般编辑器可以输入文字了
    Command-line mode, c, 就是那些Ex commands(":"),以及搜索/,?,以手filter command(!).
    

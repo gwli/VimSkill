@@ -1,50 +1,51 @@
-************
-vim ÅäÖÃ¹ÜÀí
+ï»¿************
+vim é…ç½®ç®¡ç†
 ************
 
-ÍæVimµÄÈË¶¼»á¸Ävim ÅäÖÃ£¬µ«ÊÇ×öµÄºÃÃ»ÓÐ¼¸¸ö¡£´ó²¿·Ö¶¼ÊÇÔõÃ´ÔÚÍøÉÏ³­Ò»¶Î£¬Ö±½Ó·ÅÔÚ.vimrcÎÄ¼þÀï£¬×îºóÕâ¸öÎÄ¼þÆæ´óÎÞ±È£¬²¢ÇÒvimµÄÆô¶¯Ò²±äµÃºÜÂý£¬Õâ¸ö»¹ÊÇ»¹ºÃµÄ£¬¸ü·³µÄÄÇÊÇ²»ÅäÖÃ³åÍ»ÁË£¬ÀýÈç¶Ô.cÎÄ¼þµÄÅäÖÃÓë.javaÊÇ³åÍ»µÄ£¬¼ÙÈçÕâÐ©.c ÓÃËÄ¸ö×Ö·ûËõ½øµÄ£¬¶ø.javaÊÇÓÃ3×Ö·ûËõ½øµÄ¡£ÓÐµÄÈË¶¼ÊÇÃ¿Ò»´ÎÊÖ¹¤È¥¸Ävimrc. Ã¿ÇÐ»»Ò»´Î»·¾³¾ÍÖØÐ´Ò»´Î¡£ºÜÊÇÂé·³£¬ÆäÊµvimÔç¾Í¸øÄã½â¾öÁËÕâ¸öÎÊÌâ£¬Ö»ÊÇ´ó²¿·ÖÃ»ÓÐÉîÈëÁË½â¶ø¼º¡£
-ÕâÒ»½ÚµÄÖ÷ÒªÄÚÈÝ:
+çŽ©Vimçš„äººéƒ½ä¼šæ”¹vim é…ç½®ï¼Œä½†æ˜¯åšçš„å¥½æ²¡æœ‰å‡ ä¸ªã€‚å¤§éƒ¨åˆ†éƒ½æ˜¯æ€Žä¹ˆåœ¨ç½‘ä¸ŠæŠ„ä¸€æ®µï¼Œç›´æŽ¥æ”¾åœ¨.vimrcæ–‡ä»¶é‡Œï¼Œæœ€åŽè¿™ä¸ªæ–‡ä»¶å¥‡å¤§æ— æ¯”ï¼Œå¹¶ä¸”vimçš„å¯åŠ¨ä¹Ÿå˜å¾—å¾ˆæ…¢ï¼Œè¿™ä¸ªè¿˜æ˜¯è¿˜å¥½çš„ï¼Œæ›´çƒ¦çš„é‚£æ˜¯ä¸é…ç½®å†²çªäº†ï¼Œä¾‹å¦‚å¯¹.cæ–‡ä»¶çš„é…ç½®ä¸Ž.javaæ˜¯å†²çªçš„ï¼Œå‡å¦‚è¿™äº›.c ç”¨å››ä¸ªå­—ç¬¦ç¼©è¿›çš„ï¼Œè€Œ.javaæ˜¯ç”¨3å­—ç¬¦ç¼©è¿›çš„ã€‚æœ‰çš„äººéƒ½æ˜¯æ¯ä¸€æ¬¡æ‰‹å·¥åŽ»æ”¹vimrc. æ¯åˆ‡æ¢ä¸€æ¬¡çŽ¯å¢ƒå°±é‡å†™ä¸€æ¬¡ã€‚å¾ˆæ˜¯éº»çƒ¦ï¼Œå…¶å®žvimæ—©å°±ç»™ä½ è§£å†³äº†è¿™ä¸ªé—®é¢˜ï¼Œåªæ˜¯å¤§éƒ¨åˆ†æ²¡æœ‰æ·±å…¥äº†è§£è€Œå·±ã€‚
+è¿™ä¸€èŠ‚çš„ä¸»è¦å†…å®¹:
 
 ..  
-  ÒýÓÃÏÂÃæ¸÷½ÚµÄ±êÌâ
+  å¼•ç”¨ä¸‹é¢å„èŠ‚çš„æ ‡é¢˜
 
 
-vim ÅäÖÆÎÄ¼þÂ·¾¶
+vim é…åˆ¶æ–‡ä»¶è·¯å¾„
 ----------------
 
-ÒªÏëÖªµÀÅäÖÃÔÚÄÄÀï, Ö±½Ó :command:`:help vimrc` ¾Í¿ÉÒÔÕÒµ½£¬vimµÄÅäÖÃÎÄ¼þ·ÖÁ½²ã£¬global and local:
-#. *linux*, global Ò»°ãÊÇÔÚ :file:`/etc/vim/vimrc` »òÕß :file:`/usr/share/vim`.  local ÊÇÒ»°ã¶¼ÊÇ :file:`$HOME/.vim/vimrc` ÏÂÃæ
-#. *Windows*  global ÊÇÒ»°ãÊÇÔÚ :file:`$VIM/vimrc` Õâ¸öÒ»°ãÊÇÔÚ :file:`C:\Program Files (x86)\Vim`, localÍ¬linuxÒ»Ñù£¬²»¹ý windowsÏÂµÄ$HOMEÊÇÖ¸µÄ :file:`C:\Users\<userName>` 
+è¦æƒ³çŸ¥é“é…ç½®åœ¨å“ªé‡Œ, ç›´æŽ¥ :command:`:help vimrc` å°±å¯ä»¥æ‰¾åˆ°ï¼Œvimçš„é…ç½®æ–‡ä»¶åˆ†ä¸¤å±‚ï¼Œglobal and local:
+#. *linux*, global ä¸€èˆ¬æ˜¯åœ¨ :file:`/etc/vim/vimrc` æˆ–è€… :file:`/usr/share/vim`.  local æ˜¯ä¸€èˆ¬éƒ½æ˜¯ :file:`$HOME/.vim/vimrc` ä¸‹é¢
+#. *Windows*  global æ˜¯ä¸€èˆ¬æ˜¯åœ¨ :file:`$VIM/vimrc` è¿™ä¸ªä¸€èˆ¬æ˜¯åœ¨ :file:`C:\Program Files (x86)\Vim`, localåŒlinuxä¸€æ ·ï¼Œä¸è¿‡ windowsä¸‹çš„$HOMEæ˜¯æŒ‡çš„ :file:`C:\Users\<userName>` 
 
 .. note::
 
-   µ±È»ÄãÏë×Ô¶¨ÒåÄãµÄÅäÖÃÎÄ¼þµÄÎ»ÖÃ£¬Äã¿ÉÒÔÅäÖÃ vimµÄ±àÒëÑ¡Ïî.
+   å½“ç„¶ä½ æƒ³è‡ªå®šä¹‰ä½ çš„é…ç½®æ–‡ä»¶çš„ä½ç½®ï¼Œä½ å¯ä»¥é…ç½® vimçš„ç¼–è¯‘é€‰é¡¹.
    
    .. code-block:: make
       
       make CPPFLAGS=-DSYS_VIMRC_FILE=\\\"/etc/vim/vimrc\\\"   # setting this cause vim to look for the /etc/vimrc file that containts the global vim settings. Normally this file is looked for in /usr/share/vim.
 
-Ã¿Ò»¸öÄ¿Â¼Àï¶¼»áÓÐÒ»¸ö :file:`README.txt` ,Èç¹ûÊ¹ÓÃÖ±½Ó²é¿´Õâ¸öÎÄµµ¾Í¿ÉÒÔÁË¡£
+æ¯ä¸€ä¸ªç›®å½•é‡Œéƒ½ä¼šæœ‰ä¸€ä¸ª :file:`README.txt` ,å¦‚æžœä½¿ç”¨ç›´æŽ¥æŸ¥çœ‹è¿™ä¸ªæ–‡æ¡£å°±å¯ä»¥äº†ã€‚
+
 .. csv-table:: Vim configuration directory
    :header: Name, Content , Remark
    
-   doc, ËùÓÐvimµÄ°ïÖúÎÄµµ£¬¼¸ºõËùÓÐÄãÐèÒªµÄÐÅÏ¢¶¼¿ÉÒÔÔÚÕâÀïÕÒµ½,ÄãÓÃ :command:`:help XXXX` ¶¼ÊÇ´ÓÕâÀïµÃµ½ 
-   colors, ÕâÀïÊÇËùÓÐÅäÉ«ÎÄ¼þ,Èç¹û¸Ä±äÄ¬ÈÏµÄÅäÉ«¿ÉÒÔÓÃ :command:`: colorscheme XXX` ÎÒ×î³£ÓÃÄÇ¾ÍÊÇdarkblue
-   compiler,ÕâÀïÊÇvimÎª¸÷ÖÖ±à³ÌÓïÑÔÅäÖÃcompilerµÄµØ·½,¾ßÌå¿ÉÒÔ²é¿´ :command:`help write-compiler-plugin` 
-   ftdetect, ÎÄ¼þÀàÐÍ¼ì²âÅäÖÃ£¬vimÆô¶¯»á×Ô¶¯¼ÓÔØÕâ¸öÏÂÃæµÄ½Å±¾, ÊÖ¹¤ÉèÖÃ:command:`set filetype=XX` , :command:`filetype detect` ¾Í»á¼ÓÔØÕâ¸öÏÂÃæµÄ½Å±¾
-   ftplugin,¸÷ÖÖÓëÎÄ¼þÀàÏà¹ØµÄplugin,ÀýÈçcpp.vim,c.vim, ant.vimµÈµÈ¡£
-   indent, ¸÷ÖÖÀàÐÍÎÄ¼þËõ½øµÄÅäÖÃ£¬Èç¹ûÄãÏë×Ô¶¨Òå×Ô¼ºµÄËõ½øÎÄ¼þ¿ÉÒÔÀ´ÕâÀï²Ù×÷¡£¾ßÌå¿ÉÒÔ²é¿´ http://man.chinaunix.net/newsoft/vi/doc/indent.html
-   keymap, ²»Í¬µÄÓïÑÔµÄ¼üÅÌÅäÖÃ,Ò»°ãÇé¿öºÜÉÙÓÃµ½ 
-   plugin, Í¨ÓÃ¹¦ÄÜ²å¼þ¶¼·ÅÔÚÕâÀï,ÀýÈçBGrep²å¼þ¶¼ÊÇ·ÅÔÚÀï¡£
-   syntax, ËùÓÐµÄÓï·¨¸ßÐ§ÎÄ¼þ¶¼ÊÇ·ÅÔÚÀï,Èç¹ûÄãÏë×Ô¶¨ÒåÓï·¨ÎÄ¼þ¿ÉÒÔÔÚÕâÀïÓÃÄãÊìÏ¤µÄÓï·¨ÎÄ¼þÎª²Î¿¼À´ÐÞ¸Ä
+   doc, æ‰€æœ‰vimçš„å¸®åŠ©æ–‡æ¡£ï¼Œå‡ ä¹Žæ‰€æœ‰ä½ éœ€è¦çš„ä¿¡æ¯éƒ½å¯ä»¥åœ¨è¿™é‡Œæ‰¾åˆ°,ä½ ç”¨ :command:`:help XXXX` éƒ½æ˜¯ä»Žè¿™é‡Œå¾—åˆ° 
+   colors, è¿™é‡Œæ˜¯æ‰€æœ‰é…è‰²æ–‡ä»¶,å¦‚æžœæ”¹å˜é»˜è®¤çš„é…è‰²å¯ä»¥ç”¨ :command:`: colorscheme XXX` æˆ‘æœ€å¸¸ç”¨é‚£å°±æ˜¯darkblue
+   compiler,è¿™é‡Œæ˜¯vimä¸ºå„ç§ç¼–ç¨‹è¯­è¨€é…ç½®compilerçš„åœ°æ–¹,å…·ä½“å¯ä»¥æŸ¥çœ‹ :command:`help write-compiler-plugin` 
+   ftdetect, æ–‡ä»¶ç±»åž‹æ£€æµ‹é…ç½®ï¼Œvimå¯åŠ¨ä¼šè‡ªåŠ¨åŠ è½½è¿™ä¸ªä¸‹é¢çš„è„šæœ¬, æ‰‹å·¥è®¾ç½®:command:`set filetype=XX` , :command:`filetype detect` å°±ä¼šåŠ è½½è¿™ä¸ªä¸‹é¢çš„è„šæœ¬
+   ftplugin,å„ç§ä¸Žæ–‡ä»¶ç±»ç›¸å…³çš„plugin,ä¾‹å¦‚cpp.vim,c.vim, ant.vimç­‰ç­‰ã€‚
+   indent, å„ç§ç±»åž‹æ–‡ä»¶ç¼©è¿›çš„é…ç½®ï¼Œå¦‚æžœä½ æƒ³è‡ªå®šä¹‰è‡ªå·±çš„ç¼©è¿›æ–‡ä»¶å¯ä»¥æ¥è¿™é‡Œæ“ä½œã€‚å…·ä½“å¯ä»¥æŸ¥çœ‹ http://man.chinaunix.net/newsoft/vi/doc/indent.html
+   keymap, ä¸åŒçš„è¯­è¨€çš„é”®ç›˜é…ç½®,ä¸€èˆ¬æƒ…å†µå¾ˆå°‘ç”¨åˆ° 
+   plugin, é€šç”¨åŠŸèƒ½æ’ä»¶éƒ½æ”¾åœ¨è¿™é‡Œ,ä¾‹å¦‚BGrepæ’ä»¶éƒ½æ˜¯æ”¾åœ¨é‡Œã€‚
+   syntax, æ‰€æœ‰çš„è¯­æ³•é«˜æ•ˆæ–‡ä»¶éƒ½æ˜¯æ”¾åœ¨é‡Œ,å¦‚æžœä½ æƒ³è‡ªå®šä¹‰è¯­æ³•æ–‡ä»¶å¯ä»¥åœ¨è¿™é‡Œç”¨ä½ ç†Ÿæ‚‰çš„è¯­æ³•æ–‡ä»¶ä¸ºå‚è€ƒæ¥ä¿®æ”¹
 
 .. note::
    ft -> file type
 
 
-Ð´ÅäÖÃÎÄ¼þÕýÈ·µÄ×ö·¨£¬ÀýÈçÒ»¸öÐÂµÄXXXÀàÐÍÌí¼Ó¸÷ÖÖÅäÖÃ
+å†™é…ç½®æ–‡ä»¶æ­£ç¡®çš„åšæ³•ï¼Œä¾‹å¦‚ä¸€ä¸ªæ–°çš„XXXç±»åž‹æ·»åŠ å„ç§é…ç½®
 
-#. ÔÚftdetectÄ¿Â¼ÏÂ´´½¨Ò»¸ö XXX.vim ²¢ÇÒÐ´ÈëÈçÏÂÄÚÈÝ
+#. åœ¨ftdetectç›®å½•ä¸‹åˆ›å»ºä¸€ä¸ª XXX.vim å¹¶ä¸”å†™å…¥å¦‚ä¸‹å†…å®¹
    
    .. code-block:: vim
       
@@ -52,41 +53,37 @@ vim ÅäÖÆÎÄ¼þÂ·¾¶
 
    .. note::
 
-      ÕâÀï¹â²»¹â¿ÉÒÔÌáÖ¸ÎÄ¼þÃû£¬»¹¿ÉÒÔÍ¨ÅäÎÄ¼þÂ·¾¶
+      è¿™é‡Œå…‰ä¸å…‰å¯ä»¥ææŒ‡æ–‡ä»¶åï¼Œè¿˜å¯ä»¥é€šé…æ–‡ä»¶è·¯å¾„
 
-#. ÔÚftpluginÄ¿Â¼ÏÂ´´½¨ XXX.vim, ÄãÏëÒªÅäÖÃ¶¼·ÅÔÚÕâÀï£¬ÀýÈçËõ½øÒÔ¼°³£ÓÃ¿ì½Ý¼üµÄmap¶¨ÒåÒÔ¼°×Ô¶¨ÒåµÄÐ¡º¯Êý°¡¡£
+#. åœ¨ftpluginç›®å½•ä¸‹åˆ›å»º XXX.vim, ä½ æƒ³è¦é…ç½®éƒ½æ”¾åœ¨è¿™é‡Œï¼Œä¾‹å¦‚ç¼©è¿›ä»¥åŠå¸¸ç”¨å¿«æ·é”®çš„mapå®šä¹‰ä»¥åŠè‡ªå®šä¹‰çš„å°å‡½æ•°å•Šã€‚
 
-#. ¼òµ¥ÅäÖÃ¶¼¿ÉÒÔÔÚftplugin/XXX.vimÍê³É£¬¸´ÔÓµÄÅäÖÃÀýÈçÓï·¨ÎÄ¼þµÈ£¬Äã¿ÉÒÔ×Ô¼ºÊµÏÖÒ»¸öÓïÑÔ·¨ÎÄ¼þ±£´æÎª :file:`syntax/XXX.vim`. 
-   Ò²¿ÉÒÔÖ±½ÓÔÚ :file:`ftplugin/XXX.vim` Ö±½Ó²ÉÓÃÏÖ³ÉÓï·¨ÎÄ¼þ£¬ÀýÈçCÓïÑÔµÄÓï·¨ÎÄ¼þ¡£ÈçºÎÖ±½Ó¼ÓÔØÄØÈçÏÂ 
+#. ç®€å•é…ç½®éƒ½å¯ä»¥åœ¨ftplugin/XXX.vimå®Œæˆï¼Œå¤æ‚çš„é…ç½®ä¾‹å¦‚è¯­æ³•æ–‡ä»¶ç­‰ï¼Œä½ å¯ä»¥è‡ªå·±å®žçŽ°ä¸€ä¸ªè¯­è¨€æ³•æ–‡ä»¶ä¿å­˜ä¸º :file:`syntax/XXX.vim`. 
+   ä¹Ÿå¯ä»¥ç›´æŽ¥åœ¨ :file:`ftplugin/XXX.vim` ç›´æŽ¥é‡‡ç”¨çŽ°æˆè¯­æ³•æ–‡ä»¶ï¼Œä¾‹å¦‚Cè¯­è¨€çš„è¯­æ³•æ–‡ä»¶ã€‚å¦‚ä½•ç›´æŽ¥åŠ è½½å‘¢å¦‚ä¸‹ 
    
    .. code-block:: vim
       
       runtime! syntax/C.vim
 
-#. Èç¹ûÏë×öÔÙºÃÒ»Ð©ÄØ£¬°ÑÕâÐ©ÅäÖÃÎÄ¼þÓÃgit¹ÜÀíÆðÀ´£¬·ÅÔÚgithubÉÏÃæ¡£ÕâÑù³öÁË´í¿ÉÒÔËæÊ±»Ö¸´£¬git clone ¾Í¸ã¶¨ÁË¡£     
-
-
-
-
-
+#. å¦‚æžœæƒ³åšå†å¥½ä¸€äº›å‘¢ï¼ŒæŠŠè¿™äº›é…ç½®æ–‡ä»¶ç”¨gitç®¡ç†èµ·æ¥ï¼Œæ”¾åœ¨githubä¸Šé¢ã€‚è¿™æ ·å‡ºäº†é”™å¯ä»¥éšæ—¶æ¢å¤ï¼Œgit clone å°±æžå®šäº†ã€‚     
 
 mode line
 ---------
-ÁíÒ»ÖÖ×Ô¶¯Ê¶±ðµÄ»úÖÆÄÇ¾ÍÊÇÓÃmode line. ÄÇ¾ÍÊÇ¿ªÍ·»òÕß½áÎ²ÓÃ×¢ÊÍµÄ·½Ê½À´Ð´vim mode line. ÈçÏÂ
+å¦ä¸€ç§è‡ªåŠ¨è¯†åˆ«çš„æœºåˆ¶é‚£å°±æ˜¯ç”¨mode line. é‚£å°±æ˜¯å¼€å¤´æˆ–è€…ç»“å°¾ç”¨æ³¨é‡Šçš„æ–¹å¼æ¥å†™vim mode line. å¦‚ä¸‹
 
 .. code-block:: vim
    
    vim: textwidth=78 wrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab
 
 
-²å¼þ°²×°·½·¨
+æ’ä»¶å®‰è£…æ–¹æ³•
 ------------
 
-Í¨¹ýÉÏÊöµÄ½²½â£¬ÏÖÔÚÃ÷°×ÁË²å¼þµÄÔ­Àí£¬Äã×Ô¼ºÏÂÔØµÄ²å¼þÖ±·ÅÔÚ¶ÔÓ¦µÄÄ¿±êÀï¾Í¿ÉÒÔÁË£¬Ò»°ãÃ¿Ò»¸ö²å¼þ×Ô´øµÄREADME¶¼¸æËßÄã·ÅÔÚÄÄ¸öÄ¿Â¼Àï¡£
-Ò»°ã¶¼ÊÇÔÚwww.vim.org ÏÂÔØ²å¼þ£¬ÏÖÔÚÓÐÍùgithubÒÆµÄÇ÷ÊÆ¡£
+é€šè¿‡ä¸Šè¿°çš„è®²è§£ï¼ŒçŽ°åœ¨æ˜Žç™½äº†æ’ä»¶çš„åŽŸç†ï¼Œä½ è‡ªå·±ä¸‹è½½çš„æ’ä»¶ç›´æ”¾åœ¨å¯¹åº”çš„ç›®æ ‡é‡Œå°±å¯ä»¥äº†ï¼Œä¸€èˆ¬æ¯ä¸€ä¸ªæ’ä»¶è‡ªå¸¦çš„READMEéƒ½å‘Šè¯‰ä½ æ”¾åœ¨å“ªä¸ªç›®å½•é‡Œã€‚
+ä¸€èˆ¬éƒ½æ˜¯åœ¨www.vim.org ä¸‹è½½æ’ä»¶ï¼ŒçŽ°åœ¨æœ‰å¾€githubç§»çš„è¶‹åŠ¿ã€‚
 
 
-vim ÅäÖÃÎÄ¼þÊÇÈçºÎ¼ÓÔØµÄ
+vim é…ç½®æ–‡ä»¶æ˜¯å¦‚ä½•åŠ è½½çš„
 ------------------------
 
-¾ßÌå¿ÉÒÔ²é¿´ :command:`:help starting.txt`
+å…·ä½“å¯ä»¥æŸ¥çœ‹ :command:`:help starting.txt`
+
