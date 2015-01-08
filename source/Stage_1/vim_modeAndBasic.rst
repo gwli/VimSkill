@@ -95,11 +95,11 @@ vim 的字词句
 
 行的移动
 """"""""
-:command:`jk` 是默认单行移动，:command:`10j` 向下移10行。 :command:`0`  行首，:comamnd:`$` 行尾, :command:`^` 行首第一个非空字符， :command:`_` 行尾最后一个非空字符 
+:command:`jk` 是默认单行移动，:command:`10j` 向下移10行。 :command:`0`  行首， :comamnd:`$` 行尾, :command:`^` 行首第一个非空字符， :command:`_` 行尾最后一个非空字符 
 
 屏的移动
 """"""""
-:command:`ctrl+F` 向下滚一整屏，:command:`ctrl+B` 向上滚一整屏，:command:`ctrl+U` 向下滚半屏， :command:`ctrl+U` 向上滚半屏，:command:`ctrl+Y` 向下滚一行，:command:`ctrl+E` 向上滚一行。
+:command:`ctrl+F` 向下滚一整屏，:command:`ctrl+B` 向上滚一整屏，:command:`ctrl+D` 向下滚半屏， :command:`ctrl+U` 向上滚半屏，:command:`ctrl+Y` 向下滚一行，:command:`ctrl+E` 向上滚一行。
 
 
 跳转
