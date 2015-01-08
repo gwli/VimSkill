@@ -39,9 +39,9 @@ vim 的字词句
    :header: "Name", "Abbr",Remark
 
    字母letter,l,单个字母
-   单词，w, 以空格 
+   单词,w, 以空格 
    句,W, 与标点符为分隔符 
-   段,{/},以空行为分隔符
+   段,{  },以空行为分隔符
    行,  , 以换行符为分隔符
    屏,  ,窗口屏幕的大小 的为单位
 
@@ -84,7 +84,7 @@ vim 的字词句
 
 句子的移动
 """"""""""
-:command:`W` 是句子移动, 同上:command:`W` 是移到下一个句子，:command:`B` 是移动句子的开头， :command:`E` 移动句子的结尾
+:command:`W` 是句子移动, 同上 :command:`W` 是移到下一个句子，:command:`B` 是移动句子的开头， :command:`E` 移动句子的结尾
 
 段落的移动
 """"""""""
@@ -118,7 +118,7 @@ vim 的字词句
 块的跳转
 """"""""
 :command:`%` 跳转匹配的括号，这个是对于查找括号缺失的时候非常的方便。
-:command:`[{` 跳到块首，:command:`[}` 跳转到块尾。 当然:command:`[` 在不同的编程言下有不同的用途，可以查看各种tag,具体可以查看 :command:`help [`.
+:command:`[{` 跳到块首，:command:`[}` 跳转到块尾。 当然 :command:`[` 在不同的编程言下有不同的用途，可以查看各种tag,具体可以查看 :command:`help [`.
 
 屏内的跳转
 """"""""""
@@ -135,14 +135,14 @@ vim 的字词句
 
 
 对于修改指令简单说一下，也都是可以操作这些逻辑单位为基础的
-:command:`caw`, 修这个单词，同时对比:command:`cw` :command:`c3w` 以及:command:`c/abc`. 以及这些以上命令混合使用。
+:command:`caw`, 修这个单词，同时对比 :command:`cw` :command:`c3w` 以及 :command:`c/abc`. 以及这些以上命令混合使用。
 
 :command:`dd` 删除一行,:command:`d3l` 删除三个字符，:command:`3dd` 删除三行。
 
 :command:`g ctl+G`
 对于复制粘贴 类似于删除，自行去试一试。
-:commany:`yy` 复制一行,:commany:`y3l` 复制三个字符:commany:`3yy` 复制三行。
-:commanp:`pp` 粘贴一行,:commanp:`p3l` 粘贴三个字符:commanp:`3pp` 粘贴三行。
+:command:`yy` 复制一行, :command:`y3l` 复制三个字符 :command:`3yy` 复制三行。
+:commanp:`pp` 粘贴一行, :command:`p3l` 粘贴三个字符 :command:`3pp` 粘贴三行。
 
 在vim是没有剪切命令，是由删除命令与粘贴复制组合的。因为vim 的删除命令自动把删除的内容放在ring buffer中，这个ring buffer,保存最近十次的删除，分别用0-9表示。关于寄存器的具体用法会在中级篇里详细的讲。
 
@@ -151,4 +151,4 @@ vim 的字词句
 ^^^^^^^^
 前面所讲的移动与跳转命令都在 *Vsiual Mode* 都是适用的。在 *Visual Mode* 下还有几个特殊的操作 :command:`'<` 代表选中块的块首，command:`'>`代表选中块的块尾。 :command:`ctrl+o` 可以选中块的块首与块尾之间跳转。
 
-按字符选 :command:`v`.  按行选:command:`V`. 按列选:command:`ctrl+V`. 如何精确选列 :command:`\%<20c` 前20列
+按字符选 :command:`v`.  按行选 :command:`V`. 按列选 :command:`ctrl+V`. 如何精确选列 :command:`\%<20c` 前20列
