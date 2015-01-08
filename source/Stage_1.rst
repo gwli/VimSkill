@@ -19,26 +19,8 @@ vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热�
 对于ubuntu 来说直接发  :command:`apt-get install vim` 就可以了。对于window或者直接源码的安装可以去 www.vim.org 直接下载安装。
 
 
-vim 工作模式与原理
-******************
 
-vim 主要模式有以几种，为什么要区别这些模式，给你一个notepad，然后你想实现一些功能，不是通过菜单项来实现(这个是常见的windows模式)，另一种那快捷键模式，emacs/vim都是采用快捷键的模式，功能众多，如何组织这些快捷键，vim 采用模式+单字符的快速键，emacs采用的组合键的模式。相比较而言，vim的按键次数要少于emacs.
-
-
-.. csv-table:: vim mode
-   :header: mode, abbr,remark
-
-   Normal mode, n, 默认的模式，不可以编辑，但可以上下左右移动以及跳转
-   Visual mode, v, 编辑选择模式，这个对于块操作会特别有用，可以按行选，也可以按列选，以及按照字符选择
-   Insert mode, i, 这个就是一般编辑器可以输入文字了
-   Command-line mode, c, 就是那些Ex commands(":"),以及搜索/,?,以手filter command(!).
-   
-
-buffer,window,tab
-=================
-
-
-
+.. include:: Stage_1/vim_modeAndBasic.rst
 .. include:: Stage_1/vim_configurationManagement.rst
 .. inlcude:: Stage_1/vim_projectManagement.rst
 

@@ -47,7 +47,8 @@ vim 用模式简化操作，进入模式入大部分的命令都是单字符的�
 vim 的一些资源 
 ==============
 
-#. vim 官网
-#. vim wiki
-#. vim IRC, email group
-
+#. vim 官网 , www.vim.org
+#. vim wiki, http://vim.wikia.com/wiki/Vim_Tips_Wiki
+#. vim IRC,irc.freenode.net
+#. email group , vim@vim.org/vim-announce@vim.org
+#. vim 中文在线文档 http://vimcdoc.sourceforge.net/doc/help.html
