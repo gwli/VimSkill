@@ -20,8 +20,6 @@ vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热�
 
 *:version* 可以给出这个版本的详细信息
 
--- Main.GangweiLi - 22 Jun 2012
-
 
 .. include:: Stage_1/vim_modeAndBasic.rst
 .. include:: Stage_1/vim_configurationManagement.rst
