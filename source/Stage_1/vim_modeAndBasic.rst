@@ -49,6 +49,7 @@ vim 的字词句
 
 .. csv-table:: ediit command
    :header:"Name", "Remark"
+
     修改, c C s S
     插入, i/I 
     跳转, [ ' %
@@ -56,8 +57,6 @@ vim 的字词句
     删除, x d 
     复制,y Y 
     粘贴,p P
-
-
 
 
 有了这些，就可以精确的跳转。再加上Visusal mode 就可以精确的选择了。 vim 命令操作标准模式。
