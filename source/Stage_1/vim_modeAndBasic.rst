@@ -95,7 +95,7 @@ vim 的字词句
 
 行的移动
 """"""""
-:command:`jk` 是默认单行移动，:command:`10j` 向下移10行。 :command:`0`  行首， :comamnd:`$` 行尾, :command:`^` 行首第一个非空字符， :command:`_` 行尾最后一个非空字符 
+:command:`jk` 是默认单行移动，:command:`10j` 向下移10行。 :command:`0`  行首， :command:`$` 行尾, :command:`^` 行首第一个非空字符， :command:`_` 行尾最后一个非空字符 
 
 屏的移动
 """"""""
@@ -129,7 +129,7 @@ vim 的字词句
 
 任意的跳转
 """"""""""
-:command:`/` 通过搜索来跳转，至于正则表式放在正则表达式来讲。这里后些特殊特别有用法。这个命令前面同样可以加数字，例如 :command:`2/abc` 从当前位置开始搜索第二个 abc. :comman:`/abc/;/123/`, 找到abc之后再找123. 
+:command:`/` 通过搜索来跳转，至于正则表式放在正则表达式来讲。这里后些特殊特别有用法。这个命令前面同样可以加数字，例如 :command:`2/abc` 从当前位置开始搜索第二个 abc. :command:`/abc/;/123/`, 找到abc之后再找123. 
 :command:`/test/e` 跳到匹配的词尾 ,再试一试 :command:`/test/+1`, :command:`/test/s+2`, command:`/test/b-3`. 
 :command:`/\%>199l\%<300llimit` 在199行与300行之间找limit
 
@@ -145,7 +145,7 @@ vim 的字词句
 :command:`g ctl+G`
 对于复制粘贴 类似于删除，自行去试一试。
 :command:`yy` 复制一行, :command:`y3l` 复制三个字符 :command:`3yy` 复制三行。
-:commanp:`pp` 粘贴一行, :command:`p3l` 粘贴三个字符 :command:`3pp` 粘贴三行。
+:command:`pp` 粘贴一行, :command:`p3l` 粘贴三个字符 :command:`3pp` 粘贴三行。
 
 在vim是没有剪切命令，是由删除命令与粘贴复制组合的。因为vim 的删除命令自动把删除的内容放在ring buffer中，这个ring buffer,保存最近十次的删除，分别用0-9表示。关于寄存器的具体用法会在中级篇里详细的讲。
 

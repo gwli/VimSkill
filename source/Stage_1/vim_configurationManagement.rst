@@ -9,7 +9,7 @@
 
 
 vim 配制文件路径
-----------------
+================
 
 要想知道配置在哪里, 直接 :command:`:help vimrc` 就可以找到，vim的配置文件分两层，global and local:
 #. *linux*, global 一般是在 :file:`/etc/vim/vimrc` 或者 :file:`/usr/share/vim`.  local 是一般都是 :file:`$HOME/.vim/vimrc` 下面
@@ -75,14 +75,14 @@ mode line
 
 
 插件安装方法
-------------
+============
 
 通过上述的讲解，现在明白了插件的原理，你自己下载的插件直放在对应的目标里就可以了，一般每一个插件自带的README都告诉你放在哪个目录里。
 一般都是在www.vim.org 下载插件，现在有往github移的趋势。
 
 
 vim 配置文件是如何加载的
-------------------------
+========================
 
 具体可以查看 :command:`:help starting.txt`
 
