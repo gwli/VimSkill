@@ -62,7 +62,7 @@ vim 的字词句
 
 有了这些，就可以精确的跳转。再加上Visusal mode 就可以精确的选择了。 vim 命令操作标准模式。
 
-*range:command:parameter*
+**range:command:parameter**
 
 #. 在不同场景模式range会不同默认值  
 #. 大部分命令的会有大小写两种,意义是不一样的 
@@ -75,7 +75,7 @@ vim 的字词句
 字母的移动
 """"""""""
 
-:command:`h l` 是默认是按照letter移动, 如何一次移动 5字符呢，试试:command:`5h`. 是不是向前移动了5个字符，参考上面的命令格式去理解。 下面各种逻辑单位的移动也都是这样的加前缀的来重复的。
+:command:`h l` 是默认是按照letter移动, 如何一次移动 5字符呢，试试 :command:`5h` . 是不是向前移动了5个字符，参考上面的命令格式去理解。 下面各种逻辑单位的移动也都是这样的加前缀的来重复的。
 
 单词的移动
 """"""""""
@@ -106,7 +106,7 @@ vim 的字词句
 ^^^^
 行内跳转
 """"""""
-:command:`f` 正向找， :command:`t` 是反向找,当然前面也是可以加数字的。例如 :command:`2fa` 打到当前行中第二个a.
+:command:`f` 正向找， :command:`t` 是反向找,当然前面也是可以加数字的。例如 :command:`2fa` 打到当前行中第二个a. 这些命令什么会用到，当一行特别长的时候就会用到，直接跳转你又怕弄错了行。 当一行不不超过20字符时，可能用途不大了。
 
 
 行的跳转
@@ -129,15 +129,18 @@ vim 的字词句
 
 任意的跳转
 """"""""""
-:command:`/` 通过搜索来跳转，至于正则表式放在正则表达式来讲。这里后些特殊特别有用法。这个命令前面同样可以加数字，例如:command:`2/abc` 从当前位置开始搜索第二个 abc. :comman:`/abc/;/123/`, 找到abc之后再找123. 
-:command:`/test/e` 跳到匹配的词尾 ,再试一试:command:`/test/+1`, :command:`/test/s+2`, command:`/test/b-3`. 
+:command:`/` 通过搜索来跳转，至于正则表式放在正则表达式来讲。这里后些特殊特别有用法。这个命令前面同样可以加数字，例如 :command:`2/abc` 从当前位置开始搜索第二个 abc. :comman:`/abc/;/123/`, 找到abc之后再找123. 
+:command:`/test/e` 跳到匹配的词尾 ,再试一试 :command:`/test/+1`, :command:`/test/s+2`, command:`/test/b-3`. 
 :command:`/\%>199l\%<300llimit` 在199行与300行之间找limit
 
+.. note::
+   
+   当然跳转不仅这些，例如 *buffer* 之间的跳转，以及文件的之间的跳转，以及基于tag的跳转。
 
 对于修改指令简单说一下，也都是可以操作这些逻辑单位为基础的
 :command:`caw`, 修这个单词，同时对比 :command:`cw` :command:`c3w` 以及 :command:`c/abc`. 以及这些以上命令混合使用。
 
-:command:`dd` 删除一行,:command:`d3l` 删除三个字符，:command:`3dd` 删除三行。
+:command:`dd` 删除一行, :command:`d3l` 删除三个字符，:command:`3dd` 删除三行。
 
 :command:`g ctl+G`
 对于复制粘贴 类似于删除，自行去试一试。
