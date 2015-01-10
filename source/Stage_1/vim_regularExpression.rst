@@ -1,4 +1,7 @@
-﻿*\%* 这是一个range限定词, *\@* 是一个条件词作用相当于\ze \zs 但是它有一个不同那就是它可以使用反逻辑。\@! Match with zero width if the preceding atoms does not match at the current position.
+﻿正则表达式
+**********
+
+*\%* 这是一个range限定词, *\@* 是一个条件词作用相当于\ze \zs 但是它有一个不同那就是它可以使用反逻辑。\@! Match with zero width if the preceding atoms does not match at the current position.
 <verbatim>
 |/\%$|	\%$	\%$	end of file |/zero-width|
 |/\%V|	\%V	\%V	inside Visual area |/zero-width|
