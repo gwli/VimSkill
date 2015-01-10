@@ -158,6 +158,14 @@ vim 可以基于字典补全 :command:`set dictionary=` 来设置字典， 并�
 
 还有行补全 :command:`ctrl-x ctrl-l`.  以及从一行补全 :command:`ctrl-y`,以及从下一行补全 :command:`ctl-e` .
 
+
+build 与debug
+-------------
+build 可以参考 :command:`:help :make`
+
+如何在vim 中debug 可以查看 :command:`:help debugger.txt` 与 :command:`:help debug.txt`
+
+
 各种IDE的打造 
 =============
 

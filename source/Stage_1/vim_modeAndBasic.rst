@@ -149,6 +149,15 @@ vim 的字词句
 
 在vim是没有剪切命令，是由删除命令与粘贴复制组合的。因为vim 的删除命令自动把删除的内容放在ring buffer中，这个ring buffer,保存最近十次的删除，分别用0-9表示。关于寄存器的具体用法会在中级篇里详细的讲。
 
+.. note::
+
+   *paste*  :command:`:set paste` Put Vim in Paste mode.  This is useful if you want to cut or copy
+   	some text from one window and paste it in Vim.  This will avoid
+   	unexpected effects.
+   	Setting this option is useful when using Vim in a terminal, where Vim
+   	cannot distinguish between typed text and pasted text.
+   
+-- Main.GangweiLi - 22 Jun 2012
 
 选择操作
 ^^^^^^^^
