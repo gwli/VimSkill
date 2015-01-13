@@ -134,9 +134,6 @@ vim -dev 直接当做串口使用。 根据自己的应用场景来挖掘吧。
 -- Main.GangweiLi - 16 Sep 2012
 
 
-*随时随地打开高亮*  在看一些东西的时候，会很方便，例如\t 时就会很方便，set hls(highlightsearch) 或者使用:hl 命令打开各种高亮。对于查错的时候很方便。
-
--- Main.GangweiLi - 16 Sep 2012
 
 
 *分块操作*
