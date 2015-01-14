@@ -131,7 +131,7 @@ Vim 中默认的匹配是按行处理的，如果遇到复杂的处理，文本�
 
 :command:`z#` 用法可以查看 :command:`:help :z`. 
 
-同时还可以把vim 当做 :command:`less` or :command:`more` 来使用 :command:`cat log.txt |vim -`
+同时还可以把vim 当做 :command:`less` or :command:`more` 来使用 :command:`cat log.txt |vim -` 或者只需要读的可以用 :command:`cat log.txt |view -`  view 是vim -R
 
 *随时随地打开高亮*  在看一些东西的时候，会很方便，例如\t 时就会很方便，set hls(highlightsearch) 或者使用:hl 命令打开各种高亮。对于查错的时候很方便。 当然关闭高亮 :command:`:noh`
 

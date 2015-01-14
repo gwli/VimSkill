@@ -33,22 +33,12 @@ vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热�
 
 
 
-*"+* 系统剪贴板寄存器
-
--- Main.GangweiLi - 22 Jun 2012
-
 
 *echon/echoerr/echoh/echom/* 这一系列的命令可以控制输出的各种格式。
 
 -- Main.GangweiLi - 22 Jun 2012
 
 
-*Text object motions/selection* 
-<verbatim>
-aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,....
-</verbatim>
-
--- Main.GangweiLi - 22 Jun 2012
 
 
 *Vim Ex 命令* 可以用=:help holy-grail= 来查看 
@@ -205,7 +195,6 @@ Vim scrolling功能也是极强的，目前我们差不能够想到了方式它�
 
 
 
-   * `vim calender <http://www.vim.org/scripts/script.php?script&#95;id&#61;52>`_  %IF{" '利用键盘map捕捉键盘并且可以抓取环境变量例如当下的字符等，然后实现消息拦截，利用syn match 实现各种颜色的不同' = '' " then="" else="- "}%利用键盘map捕捉键盘并且可以抓取环境变量例如当下的字符等，然后实现消息拦截，利用syn match 实现各种颜色的不同
    * `Vim 中文输入法 <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;2506>`_  %IF{" 'VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 ' = '' " then="" else="- "}%VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 
    * `Vimcdoc <http://vimcdoc.sourceforge.net/>`_  %IF{" 'online document' = '' " then="" else="- "}%online document
    * `vim edit tables <http://vimdoc.sourceforge.net/htmldoc/usr&#95;25.html#25.5>`_  %IF{" '现在再看这个文档，也明白了gq的意义，vim 的各种排版命令的意义了' = '' " then="" else="- "}%现在再看这个文档，也明白了gq的意义，vim 的各种排版命令的意义了

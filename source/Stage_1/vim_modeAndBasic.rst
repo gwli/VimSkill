@@ -148,6 +148,11 @@ vim 的字词句
 
 在vim是没有剪切命令，是由删除命令与粘贴复制组合的。因为vim 的删除命令自动把删除的内容放在ring buffer中，这个ring buffer,保存最近十次的删除，分别用0-9表示。关于寄存器的具体用法会在中级篇里详细的讲。
 
+
+现在能懂这些了吧
+
+*Text object motions/selection* `aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,.... `
+
 .. note::
 
    *paste*  :command:`:set paste` Put Vim in Paste mode.  This is useful if you want to cut or copy
@@ -163,3 +168,6 @@ vim 的字词句
 前面所讲的移动与跳转命令都在 *Vsiual Mode* 都是适用的。在 *Visual Mode* 下还有几个特殊的操作 :command:`'<` 代表选中块的块首，command:`'>`代表选中块的块尾。 :command:`ctrl+o` 可以选中块的块首与块尾之间跳转。
 
 按字符选 :command:`v`.  按行选 :command:`V`. 按列选 :command:`ctrl+V`. 如何精确选列 :command:`\%<20c` 前20列
+
+
+
