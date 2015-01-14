@@ -67,6 +67,7 @@ vim 配制文件路径
 
 mode line
 ---------
+
 另一种自动识别的机制那就是用mode line. 那就是开头或者结尾用注释的方式来写vim mode line. 如下
 
 .. code-block:: vim

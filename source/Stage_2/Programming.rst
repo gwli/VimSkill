@@ -137,7 +137,7 @@ Vim 中大量的寄存器保存各种各样信息，以与CPU寄存器的作法�
 
 vim 的python会有一个vim module.
 
-另一个方式那就是直接在 :ConquerTerm python,打开一个python。如果直接import vim那就完美了。
+另一个方式那就是直接在 :ConqueTerm python,打开一个python。如果直接import vim那就完美了。
 
 .. csv-table:: vim module
    :header: Name, Content, Example
