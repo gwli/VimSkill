@@ -4,7 +4,7 @@
 
 
 .. include:: Stage_2/Programming.rst
-.. include:: Stage_2/plugin.rst
+.. include:: Stage_2/pluginDevelop.rst
 .. include:: Stage_2/syntaxAndColor.rst
 
 
