@@ -82,3 +82,5 @@ vim 更强的是自带一个profiling 功能。
 
 具体详细的功能可以查看 :command:`help profiling`
 
+
+如果使vim 崩溃了，可以使用 gcc与gdb 来定位与调试 具体可以看 http://vimcdoc.sourceforge.net/doc/debug.html

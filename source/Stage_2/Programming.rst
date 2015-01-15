@@ -16,7 +16,7 @@ Vim shell
 
 基本语法就不讲了，可以参考 :command:` :help usr_41.txt`.  如何添加命令 :command:`:help usr_40.txt`.
 
-只讲一些主要的，vim的shell比较简单的，复杂的实现是可以用ptyhon等语言来实现的。
+只讲一些主要的，vim的shell比较简单的，复杂的实现是可以用ptyhon等语言来实现的。对于vim shell 还有一个增强版本 https://github.com/xolox/vim-shell 
 
 变量的作用域
 ------------
@@ -152,8 +152,6 @@ vim 的python会有一个vim module.
     vim.tabpages, vim中再tabpages.
     vim.vars vim.options, vim中变量以及options
     vim.current.range,这个会经常用到对应就是visual选择模式。
-
-
 
 
 编程脚本在日常的应用

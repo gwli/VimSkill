@@ -186,9 +186,155 @@ Make vim as IDE for python
 
 #. `dbtext.vim <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;356>`_  可以通过这个插件去访问各种数据库
    
+设置标题
+<verbatim>
+set title titlestring=%F%y%m%r
+</verbatim>
+
+-- Main.GangweiLi - 22 Jun 2012
+
+
+ how to display the total number of differences between the files?
+
+-- Main.GangweiLi - 22 Jun 2012
+
+
+*vim 跨两个显示器显示*
+<verbatim>
+. Run "gvim -N -u NONE -i NONE"
+. Put the Application window across the boundary between
+  the two monitors
+. Enter command ":vsplit"
+Workaround is :set guioptions+=l, :set guioptions-=L, :set guioptions+=r
+or :set guioptions-=R.
+
+When splitting window vertically, Vim shows scrollbar.  It causes window
+resize.  When resizing window, Vim try to keep window completely on
+screen.  And currently it is performed by comparing window position with
+workarea (not entire screen).  Therefore, Vim window always moves when
+it is across the boundary the two monitors.
+</verbatim>
+详情见gmail
+
+-- Main.GangweiLi - 22 Jun 2012
 
 
 
--- Main.GangweiLi - 19 Jun 2012
+
+highlighting search results from within a function   
+The problem is that the search register is saved before a function
+call and restored after, so when your function returns the search
+register no longer contains "this".  See ":help
+function-search-undo".
+
+see gmail
+
+-- Main.GangweiLi - 22 Jun 2012
+
+
+*shell* 
+可以在vim 加载不同shell, 设置不同&shell值，相关于参数都可以设置的。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*vim 启动参数*
+直接起用 - 可以直接从stdin接受输入的，可以直接接受管道来的值。+可直接加行号打开就直接跳到目标行。-oOp 可以同时打开多个窗口与tab pages.   
+ | + | 行号 |
+ | +/ | 正则表表达式 |
+ | +{} | 命令 相当于-c |
+vim -dev 直接当做串口使用。 根据自己的应用场景来挖掘吧。
+这个功能在porting的时候，你要不断去对比，查找问题，最后输入你可以输入到vim 中来这样可以大大的加快你的速度。另外那就是 find  -iname 不区分大小，然后 find . -iname "xfadfa" |xargs |grep af | vim 这样大大加快的自己的速度。
+并且在添加几个系统命令，例如常用地址，变成变量，就会很方便。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+
+
+*分块操作*
+以前都是按行操作，结构化，定义好分界符是可以按块操作，:g,:v都可以。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*改变swap文件路径*  通过设置 &dir的值。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*减少的应用* inoreabbr,iabbr 在case的时候如何用上这些功能，能够快速打出不，而不是去搜索。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*QuickFix的使用技巧*
+cn,cnf,ln,lnf, 经常修改的时候经常会这个模式，知道这些命令可以大大的提高你的效率。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*读写文件*
+writefile, readfile函数。当你生成一些固定长度的格式，就可以使用repeat函数来实现。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*comments* 格式，有的时候可以借用某种语言的注释格式，vim支持最好的那就是C。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+
+*状态栏*你可以使用　&statusline, rulerformat 来定制它。
+
+-- Main.GangweiLi - 16 Sep 2012
+
+[[amplitude phase estimation (APES)] [ftp://www.sal.ufl.edu/ywang]] 这个是谱估计的,但是现在还没有下载到,据说有二维估计,先保存下吧.
+
+
+
+
+*scrolling*
+关于屏幕的滚动，之前那些zz,zl,zh,zt以及ctrl-e/d,F,Y,u等等，以及多屏同步滚动问题都是在这里的。设置scrollingbind,以及syncbind功能。所有的说明都:help scroll.txt 就可以查到了。或者:help CTRL-D。
+Vim scrolling功能也是极强的，目前我们差不能够想到了方式它都有了。同时现在对于Emacs自己也有了新的认识，那就是当你只专注一个方面的时候用Vim就比较好，但是当你经常在不同系统之间进行切换的时候，你就会发现在利用Emacs会更好，就像XWindows一样。
+
+-- Main.GangweiLi - 25 Jan 2013
+
+
+
+
+
+
+</verbatim>
+*set showcmd*   显示选择了多少行
+
+-- Main.GangweiLi - 19 Jun 2014
+
+
+*http://vim.wikia.com/wiki/Modeline_magic* modeline  设置格式
+当modline 不起作用时，在.vimrc中加一条set modeline
+
+    
+   * `vi.mm <%ATTACHURL%/vi.mm>`_ : vi.mm
+
+  
+
+   * `UTL.VIM <http://www.vim.org/scripts/script.php?script&#95;id&#61;293>`_  %IF{" '可以根据URL 打开各种文件，就像浏览器一样。可以打开.pdf,.jpg,.doc等' = '' " then="" else="- "}%可以根据URL 打开各种文件，就像浏览器一样。可以打开.pdf,.jpg,.doc等
+   * `xml.vim 插件  <http://www.vim.org/scripts/script.php?script&#95;id&#61;1397>`_  %IF{" '编辑xml文件的利器，主要实现机制就是 &#42;omnifunc&#42; 的补全功能' = '' " then="" else="- "}%编辑xml文件的利器，主要实现机制就是 &#42;omnifunc&#42; 的补全功能
+   * `vim 离合器 <http://hackaday.com/2012/06/21/building-a-clutch-for-vim/>`_  %IF{" '利用脚来实现键盘操作' = '' " then="" else="- "}%利用脚来实现键盘操作
+   * `vim latex 插件 <http://atp-vim.sourceforge.net/>`_  %IF{" '' = '' " then="" else="- "}%
+   * `fuzzyfinder <http://hi.baidu.com/sowill/item/7621706e50c957156995e6a2>`_  %IF{" 'VIM中的文件查找利器' = '' " then="" else="- "}%VIM中的文件查找利器
+
+   * `vim debugger python <http://www.2maomao.com/blog/win32-vim-debug-python/>`_  %IF{" '下一个目标把vim 打造一个调试前端。' = '' " then="" else="- "}%下一个目标把vim 打造一个调试前端。 vimgdb
+   * `vim debugger for perl <http://search.cpan.org/~kablamo/Vim-Debug-0.8/lib/Vim/Debug/Perl.pm>`_ 
+   * `vimgvim支持对齐线.html <http://www.vimer.cn/2012/05/vimgvim&#37;E6&#37;94&#37;AF&#37;E6&#37;8C&#37;81&#37;E5&#37;AF&#37;B9&#37;E9&#37;BD&#37;90&#37;E7&#37;BA&#37;BF.html>`_  %IF{" 'set cc&#61;1,3,5,就直接出现标尺了' = '' " then="" else="- "}%set cc&#61;1,3,5,就直接出现标尺了
+   * `给 vim 增加查字典功能 <http://hi.baidu.com/ilqxd9l0vj/item/c1abc2d4665ba0e1b3f777a6>`_  %IF{" '这个很实用在写与看文档的时候' = '' " then="" else="- "}%这个很实用在写与看文档的时候
+   * `TxtBrowser&#34; plugin is a pla <http://www.vim.org/scripts/script.php?script&#95;id&#61;2899>`_  %IF{" '' = '' " then="" else="- "}%
+
+   
+
+
+
+
 
 
