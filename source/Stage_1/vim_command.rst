@@ -102,6 +102,7 @@ ex 命令
 
 :command:`g/pattern/z#5| echo "-----------------------"` 自己试一下。
 
+
 Vim 重定向  example
 -------------------
 
@@ -119,9 +120,15 @@ Vim 重定向  example
 -----------------
 !!, ! 可以 external cmd 交互。
 
+vim 本身也是可以当做sed,或者awk 一样的命令来用的。
+
+:command:`vim -E -s -c "let g:html_no_progress=1" -c "syntax on" -c "set ft=c" -c "runtime syntax/2html.vim" -cwqa myfile.c` 
+
+转换成html.
 
 内部分命令行 pipe
 -----------------
+
 let i = i | let a=3
 
 另外那就是录制
@@ -147,14 +154,35 @@ vim 本身支持排版的，vim  自身的help文档就都是 vim 直接排版�
 
    * `vim edit tables <http://vimdoc.sourceforge.net/htmldoc/usr&#95;25.html#25.5>`_  %IF{" '现在再看这个文档，也明白了gq的意义，vim 的各种排版命令的意义了' = '' " then="" else="- "}%现在再看这个文档，也明白了gq的意义，vim 的各种排版命令的意义了
 
+既然说到格式排版，就不得不说 打印了，vim 直接打印了。
+
+:command:`:hardcopy`  就打印整个文档了
+:command:`:Tohtml` 输出成HTML
+
+并且都还支持部分的输出 
+
+:command:`:10,40harcopy` 只打印  10-40行，同理对于 :command:`:TOhtml` 也是一样的。
+
+diff 下的命令
+============
+如何比较两个不同的文件，如何比较同一个文件两部分，或者不同文件的两部分。
+
+基本命令
+--------
+:command:`]c` 跳转到下一个差异处
+:command:`]c` 跳转到上一个差异处
+:command:`do` 当前的差异merge到另方
+:command:`dg` 把差异merge到自己
+ 
+
+两个文本部分内容的对比
+----------------------
+可以借助 :command:`g:html_diff_one_file`.
+
 如何添加一条命令
 ================
 
 两种方式，直接用keymapping 来完成 ex 命令的调用 另一种直接调用vim的函数来实现一个命令行命令 具体参考中级篇的内容
-
-
-
-
 
    * `Vim 中文输入法 <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;2506>`_  %IF{" 'VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 ' = '' " then="" else="- "}%VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 
    * `Vimcdoc <http://vimcdoc.sourceforge.net/>`_  %IF{" 'online document' = '' " then="" else="- "}%online document
