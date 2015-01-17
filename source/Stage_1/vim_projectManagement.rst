@@ -27,6 +27,7 @@ buffer,window,tab
 
 buffer
 ------
+
 一般情况一下， 可以这么理解一个文件对应buffer, 当你用 vim 当然打开多个文件的时候 :command:`vim a.txt b.txt c.txt`. 就相应的会有三个buffer产生分别对应 三个文件。你可以通过 :command:`:ls` 来查看打开了多少个buffer. 当然还有特殊的 buffer用于特殊的用途。
 
 `Vim wiki Buffer FAQ <http://vim.wikia.com/wiki/Vim_buffer_FAQ>`_ 
@@ -104,6 +105,7 @@ Window 的常见操作
 
 窗口的本身的移动
 ^^^^^^^^^^^^^^^^
+
 :command:`ctrl-W r` 向下或向右移
 :command:`ctrl-W R` 向上或者向左移
 :command:`ctrl-W x` 与下一个window互换
@@ -139,6 +141,7 @@ Vim虽然项目文件，但是有一个session文件。它可以保存当前的v
 
 tags 
 ----
+
 vim 是支持 ctags以及cscope的，只要生成tags, 并用 :command:`set tags=` 加载了你 tags 文件。 可以查询tag.  详细的用法可以查看 :command:`:help tags` 与 :command:`:help tagsrch.txt` .
 常用命令如下:
 :command:`tags` 查看tags列表
@@ -161,6 +164,7 @@ vim 可以基于字典补全 :command:`set dictionary=` 来设置字典， 并�
 
 build 与debug
 -------------
+
 build 可以参考 :command:`:help :make`
 
 如何在vim 中debug 可以查看 :command:`:help debugger.txt` 与 :command:`:help debug.txt`
@@ -187,11 +191,9 @@ Make vim as IDE for python
 #. `dbtext.vim <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;356>`_  可以通过这个插件去访问各种数据库
    
 设置标题
-<verbatim>
-set title titlestring=%F%y%m%r
-</verbatim>
+--------
 
--- Main.GangweiLi - 22 Jun 2012
+:command:`:set title titlestring=%F%y%m%r`
 
 
  how to display the total number of differences between the files?
@@ -199,24 +201,21 @@ set title titlestring=%F%y%m%r
 -- Main.GangweiLi - 22 Jun 2012
 
 
-*vim 跨两个显示器显示*
-<verbatim>
-. Run "gvim -N -u NONE -i NONE"
-. Put the Application window across the boundary between
-  the two monitors
-. Enter command ":vsplit"
-Workaround is :set guioptions+=l, :set guioptions-=L, :set guioptions+=r
-or :set guioptions-=R.
-
-When splitting window vertically, Vim shows scrollbar.  It causes window
-resize.  When resizing window, Vim try to keep window completely on
-screen.  And currently it is performed by comparing window position with
-workarea (not entire screen).  Therefore, Vim window always moves when
-it is across the boundary the two monitors.
-</verbatim>
-详情见gmail
-
--- Main.GangweiLi - 22 Jun 2012
+vim 跨两个显示器显示
+--------------------
+.. code-block:: vim
+   . Run "gvim -N -u NONE -i NONE"
+   . Put the Application window across the boundary between
+     the two monitors
+   . Enter command ":vsplit"
+   Workaround is :set guioptions+=l, :set guioptions-=L, :set guioptions+=r
+   or :set guioptions-=R.
+   
+   When splitting window vertically, Vim shows scrollbar.  It causes window
+   resize.  When resizing window, Vim try to keep window completely on
+   screen.  And currently it is performed by comparing window position with
+   workarea (not entire screen).  Therefore, Vim window always moves when
+   it is across the boundary the two monitors.
 
 
 

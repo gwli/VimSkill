@@ -11,8 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 3
    
-   Introduction  
-   VimInDaily
+   Stage_0
    Stage_1
    Stage_2
    Stage_3

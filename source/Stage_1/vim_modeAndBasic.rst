@@ -154,7 +154,7 @@ vim 的字词句
 
 现在能懂这些了吧
 
-*Text object motions/selection* `aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,.... `
+*Text object motions/selection* `aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,....`
 
 .. note::
 

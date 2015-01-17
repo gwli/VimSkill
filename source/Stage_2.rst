@@ -6,6 +6,7 @@
 .. include:: Stage_2/Programming.rst
 .. include:: Stage_2/pluginDevelop.rst
 .. include:: Stage_2/syntaxAndColor.rst
+.. include:: Stage_2/vimInDaily_2.rst
 
 
 当你对vim的各种接口熟悉了之后，就可以另一部分操作了。
@@ -152,6 +153,7 @@ How to replace tab with blank::
 
 如何改当前的文件名
 ******************
+
 `:file {name}` 就会改当前文件名。
 
 如何在一个新窗口查看一个文件

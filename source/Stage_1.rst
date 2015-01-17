@@ -10,7 +10,7 @@ vim 自身也有很好的教程， 直接查询usermanual中，getStarted 教程
 这里只介绍原理帮助理解与提高,以及遇到常见的困惑。
 
 vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热心的vim fan提供了一个小游戏来练习了，http://vim-adventures.com/ 
-当然如果你觉得自己一的vim水平还可以，那就来自测一下 `Best of Vim Tips <http://www.rayninfo.co.uk/vimtips.html >`_ . 这是一个用了vim 22年 老法师的总结，看看你能看懂会用多少。
+当然如果你觉得自己一的vim水平还可以，那就来自测一下 `Best of Vim Tips <http://www.rayninfo.co.uk/vimtips.html>`_ . 这是一个用了vim 22年 老法师的总结，看看你能看懂会用多少。
 能看40% 说明你已经过了初级了.
 
 安装
@@ -23,7 +23,7 @@ vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热�
 
 .. include:: Stage_1/vim_modeAndBasic.rst
 .. include:: Stage_1/vim_configurationManagement.rst
-.. inlcude:: Stage_1/vim_projectManagement.rst 
+.. include:: Stage_1/vim_projectManagement.rst 
 .. include:: Stage_1/vim_regularExpression.rst
 .. include:: Stage_1/vim_command.rst
 
