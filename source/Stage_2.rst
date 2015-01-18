@@ -7,6 +7,7 @@
 .. include:: Stage_2/pluginDevelop.rst
 .. include:: Stage_2/syntaxAndColor.rst
 .. include:: Stage_2/vimInDaily_2.rst
+.. include:: Stage_2/templateTools.rst
 
 
 当你对vim的各种接口熟悉了之后，就可以另一部分操作了。
