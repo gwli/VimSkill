@@ -19,7 +19,7 @@ vim 主要模式有以几种，为什么要区别这些模式，给你一个note
    Normal mode, n, 默认的模式，不可以编辑，但可以上下左右移动以及跳转
    Visual mode, v, 编辑选择模式，把它翻译成选择模式会有助于理解 这个对于块操作会特别有用，可以按行选，也可以按列选，以及按照字符选择
    Insert mode, i, 这个就是一般编辑器可以输入文字了
-   Command-line mode, c, 就是那些Ex commands(":"),以及搜索/,?,以手filter command(!).
+   Command-line mode, c, 就是那些Ex commands(":"),以及搜索/,?, filter command(!).
    
 当你学会了基本了 :command:`hjkl` 之后，以及简单的编辑之后，你并不会觉得这样操作与别的编辑器有什么区别呢。并且你也会觉得这样会也没有多快。
 
@@ -41,9 +41,11 @@ vim 的字词句
    屏,  ,窗口屏幕的大小 的为单位
 
 
-更多的文本的单位可以参考 :command:`h objects`. 
+更多的文本的单位可以参考 :command:`h objects`.  现在能看懂这些了吧。
 
-以后移动编辑都是这些单位的，除了字母本身，没有头与尾之外。其他几个单位都是有的。
+*Text object motions/selection*  `aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,....`
+
+以后移动编辑都是这些单位的，除了字母本身，没有头与尾之外。其他几个单位都是有的。 以前都是按行操作，结构化，定义好分界符是可以 *按块操作* ，:g,:v都可以。
 
 .. csv-table:: ediit command
    :header:"Name", "Remark"
@@ -121,13 +123,13 @@ vim 的字词句
 """"""""""
 :command:`zt` 跳到屏幕的首行，:command:`zb` 跳到屏幕的尾行，:command:`zz` 跳到屏幕中央，这个一条最有常用。
 
-另一条常用的命令那就是打开折行 :command:`zr` 具体可以参考教程 :command:`help user_28.txt`. 
+另一条常用的命令那就是打开折行 :command:`zr` 具体可以参考教程 :command:`:help user_28.txt`. 
 
 
 任意的跳转
 """"""""""
 :command:`/` 通过搜索来跳转，至于正则表式放在正则表达式来讲。这里后些特殊特别有用法。这个命令前面同样可以加数字，例如 :command:`2/abc` 从当前位置开始搜索第二个 abc. :command:`/abc/;/123/`, 找到abc之后再找123. 
-:command:`/test/e` 跳到匹配的词尾 ,再试一试 :command:`/test/+1`, :command:`/test/s+2`, command:`/test/b-3`. 
+:command:`/test/e` 跳到匹配的词尾 ,再试一试 :command:`/test/+1`, :command:`/test/s+2`, :command:`/test/b-3`. 
 :command:`/\%>199l\%<300llimit` 在199行与300行之间找limit
 
 .. note::
@@ -146,11 +148,6 @@ vim 的字词句
 
 在vim是没有剪切命令，是由删除命令与粘贴复制组合的。因为vim 的删除命令自动把删除的内容放在ring buffer中，这个ring buffer,保存最近十次的删除，分别用0-9表示。关于寄存器的具体用法会在中级篇里详细的讲。
 
-
-现在能懂这些了吧
-
-*Text object motions/selection* `aw,iw,aW,iW,as,is,ap,ip,],),ab,<,at,....`
-
 .. note::
 
    *paste*  :command:`:set paste` Put Vim in Paste mode.  This is useful if you want to cut or copy
@@ -159,13 +156,17 @@ vim 的字词句
    	Setting this option is useful when using Vim in a terminal, where Vim
    	cannot distinguish between typed text and pasted text.
    
--- Main.GangweiLi - 22 Jun 2012
+
 
 选择操作
 ^^^^^^^^
 前面所讲的移动与跳转命令都在 *Vsiual Mode* 都是适用的。在 *Visual Mode* 下还有几个特殊的操作 :command:`'<` 代表选中块的块首，command:`'>`代表选中块的块尾。 :command:`ctrl+o` 可以选中块的块首与块尾之间跳转。
 
-按字符选 :command:`v`.  按行选 :command:`V`. 按列选 :command:`ctrl+V`. 如何精确选列 :command:`\%<20c` 前20列
+按字符选 :command:`v`.  按行选 :command:`V`. 按列选 :command:`ctrl+V`. 如何精确选列 :command:`\\%<20c` 前20列
+
+如何知道自己选择了多少行呢。 :command:`:set showcmd` 就可以在状态栏看到了。
+
+
 
 
 

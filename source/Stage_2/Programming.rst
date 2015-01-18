@@ -1,4 +1,4 @@
-﻿Vim 编程
+Vim 编程
 ********
 
 vim 有自身的脚本语言，同时也支持其他常见的语言，例如 python, tcl,perl等等。 当你熟悉这些之后，你基本上就
@@ -8,8 +8,17 @@ vim 有自身的脚本语言，同时也支持其他常见的语言，例如 pyt
 另一方便，对于初级篇中很东东，都不但知其然，并知其所以然。用起来就会更加的高效。当然对于
 出现的问题的，也少一些的茫然，而不是只会google了。
 
+
+.. csv-table:: resource
+   
+   good start to learn the learning vimscript ,  help eval.txt  options.txt 
+   Learn Vimscript the Hard Way , http://learnvimscriptthehardway.stevelosh.com/ 
+   vim 下的unit测试工具, `vimUnit  <http://www.vim.org/scripts/script.php?script_id=1125>`_  
+
+
 Vim shell
 =========
+
 每一个语言都都有变量， vim 支持标量，以及列表以及字典。 然后就是内在结构。主要是寄存器。
 各种的 options.
 再有函数的支持，以及一些内建函数的支持。
@@ -59,20 +68,23 @@ option
 Vim 中大量的寄存器保存各种各样信息，以与CPU寄存器的作法，有过之而不及。
 
 一共有九种寄存器 具体用法可以查看  :command:`:h registers` 
+
 #. The unnamed register ""
 #. 10 numbered registers "0 to "9
 #. The small delete register "-
 #. 26 named registers "a to "z or "A to "Z
 #. four read-only registers ":, "., "% and "#
 #. the expression register "=
-#. The selection and drop registers ``"*, "+ and "~ ``
-#. The black hole register "_
-#. Last search pattern register "/
+#. The selection and drop registers ``"*, "+ and "~``
+#. The black hole register ``"_``
+#. Last search pattern register ``"/``
 
 下面通过例子来讲解常用寄存器的用法, 当你需要用一些特殊的直接来查就行了。
 
 查看当前所有寄存器的值 :command:`:reg`
 
+
+.. seealso :: http://www.cnblogs.com/chenyadong/archive/2011/07/11/2103249.html
 
 匿名寄存器
 """"""""""
@@ -137,21 +149,27 @@ Vim 中大量的寄存器保存各种各样信息，以与CPU寄存器的作法�
 
 vim 的python会有一个vim module.
 
-另一个方式那就是直接在 :ConqueTerm python,打开一个python。如果直接import vim那就完美了。
+另一个方式那就是直接在 :command:`:ConqueTerm python` ,打开一个python。如果直接import vim那就完美了。
 
 .. csv-table:: vim module
    :header: Name, Content, Example
 
-    vim.windows, all the windows, vim.windows[0] 第一个窗口
-    vim.buffers, all the buffers, vim.buffers[0] 每一个buffer
-    vim.current, current 指针 包含当前所有状态, vim.current.window当前的窗口 vim.current.buffer 当前的buffer
-    vim.current.buffer[m:n], 当前buffer中m到n行
-    vim.comand, 可以用来执行Ex命令,vim.command("%s/lgw/zgg")
-    vim.eval, 执行vim命令并取得返回值, :command:`:py str = vi.eval("12+12")
-    vim.bindeval,执行vim命令并返回 ptyhon对象
-    vim.tabpages, vim中再tabpages.
-    vim.vars vim.options, vim中变量以及options
-    vim.current.range,这个会经常用到对应就是visual选择模式。
+   vim.windows, all the windows, vim.windows[0] 第一个窗口
+   vim.buffers, all the buffers, vim.buffers[0] 每一个buffer
+   vim.current, current 指针 包含当前所有状态, vim.current.window当前的窗口 vim.current.buffer 当前的buffer
+   vim.current.buffer[m:n], 当前buffer中m到n行
+   vim.comand, 可以用来执行Ex命令,vim.command("%s/lgw/zgg")
+   vim.eval, 执行vim命令并取得返回值, :command:`:py str = vi.eval("12+12")`
+   vim.bindeval,执行vim命令并返回 ptyhon对象
+   vim.tabpages, vim中再tabpages.
+   vim.vars vim.options, vim中变量以及options
+   vim.current.range,这个会经常用到对应就是visual选择模式。
+
+
+*读写文件*
+
+writefile, readfile函数。当你生成一些固定长度的格式，就可以使用repeat函数来实现。
+
 
 
 编程脚本在日常的应用
@@ -196,3 +214,20 @@ vim 的python会有一个vim module.
 
 这里是有一个bug的，那就是表达式寄存器是不认的 :pydo命令的。
 :command:`ctl-r=pydo os.listdir(".")` 是会报错的
+
+printf
+^^^^^^
+在需要计算生成数据时，使用printf就会很方便，你把关键的数据用正则式表达出来，然后通过printf来调用户各种函数输出，就可以不需要太多转义字符
+
+.. code-block:: vim
+   
+   :%s/[0-9]\{2,5}/\=printf("A is %.2f,B is %.2f%,submatch(0)*0.2)/gc
+
+
+字符串反序
+^^^^^^^^^^
+
+.. code-block:: vim
+
+   join(reverse(split("ABCDE",'\zs')),"")
+   :s/.*/\=join(reverse(split(submatch(0),'\zs')),'')/g

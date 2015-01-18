@@ -1,9 +1,9 @@
-﻿Vim 的窗口管理 
+Vim 的窗口管理 
 **************
 
 Vim 的初始介面看上去很简单了，就像notepad. 但功能没有notepad那样简单的，可以说Vim本身就是功能很强的IDE。build,edit,debug. 都是支持的。 只是方式现在的IDE方式略有不同罢了。当然你可以把它打造各种现代的IDE,网上这样的配置很多，插见还也很多。 但是都以vim的窗口管理为基础的。而vim 窗口管理又是以buffer,window,tab page为是基础。 但是很大一部分人并不知道自身就支持tab page.有些人为使用tab page,还要额外的装插件。 
 
-在学习篇的时候同时参考 :comand:`help windows.txt` , :command:`:help usr_07.txt` 以及:command:`help usr_08.txt`
+在学习篇的时候同时参考 :command:`:help windows.txt` , :command:`:help usr_07.txt` 以及 :command:`:help usr_08.txt`
 
 buffer,window,tab
 =================
@@ -28,7 +28,11 @@ buffer,window,tab
 buffer
 ------
 
-一般情况一下， 可以这么理解一个文件对应buffer, 当你用 vim 当然打开多个文件的时候 :command:`vim a.txt b.txt c.txt`. 就相应的会有三个buffer产生分别对应 三个文件。你可以通过 :command:`:ls` 来查看打开了多少个buffer. 当然还有特殊的 buffer用于特殊的用途。
+一般情况一下， 可以这么理解一个文件对应buffer, 当你用 vim 当然打开多个文件的时候 
+
+:command:`vim a.txt b.txt c.txt`
+
+就相应的会有三个buffer产生分别对应 三个文件。你可以通过 :command:`:ls` 来查看打开了多少个buffer. 当然还有特殊的 buffer用于特殊的用途。
 
 `Vim wiki Buffer FAQ <http://vim.wikia.com/wiki/Vim_buffer_FAQ>`_ 
 
@@ -45,14 +49,13 @@ vim 五种类型可以通过 :command:`:help buffertype` 查看。
 
 *command line* buffer, 在编辑 :command:`:XX` 这些命令，要查看记录,也想像正常的文本编辑那样编辑 命令呢。 在 command:`:XX` 之后再按一下 :command:`ctrl+f` 就看到这个buffer了。 你可以看到所有命令的历史记录，并且还可以编辑修改那些命令。 然后你按一下 :command:`Enter` 就执行了。
 
-
 *unlisted* 这个buffer的不可见，不用来编辑，主要用记录一些file name以及marks. 你用 *mark* 书签的就会用到。 vim 是支持书签功能的，但是只能是单字符的书签。所以最多只能有26个，*a-z* . 在 *Normal mode* 下 :command:`m` 来建立书签。例如 :command:`ma` 就是在当前行插入书签a. 然后用 :command:`'` 来进行书签的跳转。 例如 :command:`'a` 跳转书签a 处，这个功能是分析代码的时候特别的有用。 但是这些书签存在哪里，就是在 unlisted buffer里。
 
 *direcotry* 目录buffer, vim 也是可以做文件浏览器的打开目录的。 直接用 Vim 打开一个目录 试一试便知。
 
 *quickfix* 就像类似于IDE中那个error windows. 一般写代码的模式 都是edit-compile-edit 模式。 当你编译好，他会编译显示错误的信息。 例如 **BGrep** 插件就是利用这个来实现的。这个buffer是不能像正常的文件那样直接读写的。是需要 :command:`:cwindow` 以及 :command:`lwindow`.  详细的用法 :command:`:help quickfix.txt` . 
 
-*help* buffer 主要是用查看help文档的，是不能修改的。 当然也会支持一些特珠格式与语法。 这个你以通过 help文档就可以看出来。
+*help buffer* 主要是用查看help文档的，是不能修改的。 当然也会支持一些特珠格式与语法。 这个你以通过 help文档就可以看出来。
 
 buffer的常用操作
 ^^^^^^^^^^^^^^^^
@@ -71,19 +74,23 @@ buffer的常用操作
    在用 *bufdo* 时候，一般在切换buffer时，Vim 会去检查你是否保存改动，如果没有保存，会拒绝切换。 可以通过设置 buffer属性来解决这个问题。
    :command:`:set hidden` 就可以了。
 
+
+*改变swap文件路径*  通过设置 &dir的值。
+
+
 quickfix buffer 常用操作
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 :command:`:cc n`  跳到 error n 处
 :command:`:cn`    跳到下一个错误处
 :command:`:cp`    跳到上一个错误处
 :command:`:cl`    显示错误例表
-
-
+经常修改的时候经常会这个模式，知道这些命令可以大大的提高你的效率。
 
 Window 的常见操作
 -----------------
 
-对于window的操作有两种模式一种命令模式 如 :command:`:sp` 另外是在 *Normal Mode* 下的Emacs风格的组合键 与 :key:`Ctrl-W` 当前缀的。 所以:key:`Ctrl-W s` 也是分屏的意思。
+对于window的操作有两种模式一种命令模式 如 :command:`:sp` 另外是在 *Normal Mode* 下的Emacs风格的组合键 与 :kbd:`Ctrl-W` 当前缀的。 所以 :kbd:`Ctrl-W s` 也是分屏的意思。
 个人常用command 模式，组合键模式可以参考 :command:`:help opening-windows`.
 
 :command:`:vs` 垂直分屏
@@ -94,6 +101,19 @@ Window 的常见操作
 :command:`:only` 只留当前窗口
 
 :command:`:lefabove` :command:`:abo` :command:`:rightb` :command:`:bel` :command:`:top` 这些都打开窗的操作  分别表示上下左右。 另如在打左上角打开一个新window 来编辑 a.txt :command:`:top edit a.txt`. 
+
+如何在一个新窗口查看一个文件
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`CTRL-W_CTRL-F` 就可以了。
+
+如何另外的打开窗口
+^^^^^^^^^^^^^^^^^^
+vim 支持窗口的任意切开，其实所谓taglist也就是么干的。主要 是`ctrl-W`来控制，上下左右的切，并且交换buffer,以及位置都是很方便的。并且例如VS2013中的Peek也是很容易的。
+`sfind` 直接开窗口
+`top {cmd}` 可以打开一个新窗口执行命令。
+并且还有preview的功能。
+
 
 
 光标在窗口间的切换
@@ -118,11 +138,14 @@ Window 的常见操作
 
 窗口大小不常用不写在这里，具体可以查看 :command:`:help window-resize`. 
 
+*scrolling 屏幕的滚动*  之前那些zz,zl,zh,zt以及ctrl-e/d,F,Y,u等等，以及多屏同步滚动问题都是在这里的。设置scrollingbind,以及syncbind功能。所有的说明都:help scroll.txt 就可以查到了。或者:help CTRL-D。
+Vim scrolling功能也是极强的，目前我们差不能够想到了方式它都有了。同时现在对于Emacs自己也有了新的认识，那就是当你只专注一个方面的时候用Vim就比较好，但是当你经常在不同系统之间进行切换的时候，你就会发现在利用Emacs会更好，就像XWindows一样。
+
 
 tab page 操作
 -------------
 
-其实需要用到地方不多，简单的列举最可能用到一些命令吧. 它哪有类似于window的大部分操作查看，编辑，移动等等,用到的话可以查看 :command:`help tabpage.txt` 
+其实需要用到地方不多，简单的列举最可能用到一些命令吧. 它哪有类似于window的大部分操作查看，编辑，移动等等,用到的话可以查看 :command:`:help tabpage.txt` 
 :command:`:tabe` :command:`:tabnew` 打开一个新 tab page.
 :command:`:tabc` 关闭tab page. :command:`:tabo[nly]` 关闭其他 tab page.
 
@@ -155,7 +178,7 @@ vim 是支持 ctags以及cscope的，只要生成tags, 并用 :command:`set tags
 关于自动补全
 ------------
 
-就光自带的:command:`ctrl+n` 与:command:`ctrl+p` 功能就靠你了。 你用插件来增强一下，那就更强了。大部分情况下自带就功能靠。
+就光自带的 :kbd:`ctrl+n` 与 :kbd:`ctrl+p` 功能就靠你了。 你用插件来增强一下，那就更强了。大部分情况下自带就功能靠。
 
 vim 可以基于字典补全 :command:`set dictionary=` 来设置字典， 并且用 :command:`ctrl-x ctrl-k` 来补全。
 
@@ -169,166 +192,13 @@ build 可以参考 :command:`:help :make`
 
 如何在vim 中debug 可以查看 :command:`:help debugger.txt` 与 :command:`:help debug.txt`
 
-
-各种IDE的打造 
-=============
-
-网络上这种文档到处都是。这里简单取几个例子吧。
-
-Make vim as IDE for python
---------------------------
-
-#. `pydiction <http://www.vim.org/scripts/script.php?script_id=850>`_   使用tab键来进行字典匹配，并且可以自己生成自己。
-#. `python语法文件 <http://www.vim.org/scripts/script.php?script_id=790>`_ 
-#. `ctags的增强版本，自动生成tags 文件 <http://www.vim.org/scripts/script.php?script_id=3114>`_ 
-#. `vim-as-your-ide for python <http://haridas.in/vim-as-your-ide.html>`_ 
-#. `his is the pythoncomplete omni-completion script shipped with vim 7.  Updated versions will appear here, as the vim tarballs do not ship with updated runtime files.  <http://www.vim.org/scripts/script.php?script_id=1542>`_ 
-#. `pydoc 命令 <http://www.vim.org/scripts/script.php?script_id=910>`_ 
-
-数据库的IDE
------------
-
-#. `dbtext.vim <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;356>`_  可以通过这个插件去访问各种数据库
-   
-设置标题
---------
-
-:command:`:set title titlestring=%F%y%m%r`
-
-
- how to display the total number of differences between the files?
-
--- Main.GangweiLi - 22 Jun 2012
-
-
-vim 跨两个显示器显示
---------------------
-.. code-block:: vim
-   . Run "gvim -N -u NONE -i NONE"
-   . Put the Application window across the boundary between
-     the two monitors
-   . Enter command ":vsplit"
-   Workaround is :set guioptions+=l, :set guioptions-=L, :set guioptions+=r
-   or :set guioptions-=R.
-   
-   When splitting window vertically, Vim shows scrollbar.  It causes window
-   resize.  When resizing window, Vim try to keep window completely on
-   screen.  And currently it is performed by comparing window position with
-   workarea (not entire screen).  Therefore, Vim window always moves when
-   it is across the boundary the two monitors.
+.. include:: /Stage_1/VimInDaily_1.rst
 
 
 
-
-highlighting search results from within a function   
-The problem is that the search register is saved before a function
-call and restored after, so when your function returns the search
-register no longer contains "this".  See ":help
-function-search-undo".
-
-see gmail
-
--- Main.GangweiLi - 22 Jun 2012
-
-
-*shell* 
-可以在vim 加载不同shell, 设置不同&shell值，相关于参数都可以设置的。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*vim 启动参数*
-直接起用 - 可以直接从stdin接受输入的，可以直接接受管道来的值。+可直接加行号打开就直接跳到目标行。-oOp 可以同时打开多个窗口与tab pages.   
- | + | 行号 |
- | +/ | 正则表表达式 |
- | +{} | 命令 相当于-c |
-vim -dev 直接当做串口使用。 根据自己的应用场景来挖掘吧。
-这个功能在porting的时候，你要不断去对比，查找问题，最后输入你可以输入到vim 中来这样可以大大的加快你的速度。另外那就是 find  -iname 不区分大小，然后 find . -iname "xfadfa" |xargs |grep af | vim 这样大大加快的自己的速度。
-并且在添加几个系统命令，例如常用地址，变成变量，就会很方便。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-
-
-*分块操作*
-以前都是按行操作，结构化，定义好分界符是可以按块操作，:g,:v都可以。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*改变swap文件路径*  通过设置 &dir的值。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*减少的应用* inoreabbr,iabbr 在case的时候如何用上这些功能，能够快速打出不，而不是去搜索。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*QuickFix的使用技巧*
-cn,cnf,ln,lnf, 经常修改的时候经常会这个模式，知道这些命令可以大大的提高你的效率。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*读写文件*
-writefile, readfile函数。当你生成一些固定长度的格式，就可以使用repeat函数来实现。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*comments* 格式，有的时候可以借用某种语言的注释格式，vim支持最好的那就是C。
-
--- Main.GangweiLi - 16 Sep 2012
-
-
-*状态栏*你可以使用　&statusline, rulerformat 来定制它。
-
--- Main.GangweiLi - 16 Sep 2012
-
-[[amplitude phase estimation (APES)] [ftp://www.sal.ufl.edu/ywang]] 这个是谱估计的,但是现在还没有下载到,据说有二维估计,先保存下吧.
-
-
-
-
-*scrolling*
-关于屏幕的滚动，之前那些zz,zl,zh,zt以及ctrl-e/d,F,Y,u等等，以及多屏同步滚动问题都是在这里的。设置scrollingbind,以及syncbind功能。所有的说明都:help scroll.txt 就可以查到了。或者:help CTRL-D。
-Vim scrolling功能也是极强的，目前我们差不能够想到了方式它都有了。同时现在对于Emacs自己也有了新的认识，那就是当你只专注一个方面的时候用Vim就比较好，但是当你经常在不同系统之间进行切换的时候，你就会发现在利用Emacs会更好，就像XWindows一样。
-
--- Main.GangweiLi - 25 Jan 2013
-
-
-
-
-
-
-</verbatim>
-*set showcmd*   显示选择了多少行
-
--- Main.GangweiLi - 19 Jun 2014
-
-
-*http://vim.wikia.com/wiki/Modeline_magic* modeline  设置格式
-当modline 不起作用时，在.vimrc中加一条set modeline
-
-    
-   * `vi.mm <%ATTACHURL%/vi.mm>`_ : vi.mm
 
   
 
-   * `UTL.VIM <http://www.vim.org/scripts/script.php?script&#95;id&#61;293>`_  %IF{" '可以根据URL 打开各种文件，就像浏览器一样。可以打开.pdf,.jpg,.doc等' = '' " then="" else="- "}%可以根据URL 打开各种文件，就像浏览器一样。可以打开.pdf,.jpg,.doc等
-   * `xml.vim 插件  <http://www.vim.org/scripts/script.php?script&#95;id&#61;1397>`_  %IF{" '编辑xml文件的利器，主要实现机制就是 &#42;omnifunc&#42; 的补全功能' = '' " then="" else="- "}%编辑xml文件的利器，主要实现机制就是 &#42;omnifunc&#42; 的补全功能
-   * `vim 离合器 <http://hackaday.com/2012/06/21/building-a-clutch-for-vim/>`_  %IF{" '利用脚来实现键盘操作' = '' " then="" else="- "}%利用脚来实现键盘操作
-   * `vim latex 插件 <http://atp-vim.sourceforge.net/>`_  %IF{" '' = '' " then="" else="- "}%
-   * `fuzzyfinder <http://hi.baidu.com/sowill/item/7621706e50c957156995e6a2>`_  %IF{" 'VIM中的文件查找利器' = '' " then="" else="- "}%VIM中的文件查找利器
-
-   * `vim debugger python <http://www.2maomao.com/blog/win32-vim-debug-python/>`_  %IF{" '下一个目标把vim 打造一个调试前端。' = '' " then="" else="- "}%下一个目标把vim 打造一个调试前端。 vimgdb
-   * `vim debugger for perl <http://search.cpan.org/~kablamo/Vim-Debug-0.8/lib/Vim/Debug/Perl.pm>`_ 
-   * `vimgvim支持对齐线.html <http://www.vimer.cn/2012/05/vimgvim&#37;E6&#37;94&#37;AF&#37;E6&#37;8C&#37;81&#37;E5&#37;AF&#37;B9&#37;E9&#37;BD&#37;90&#37;E7&#37;BA&#37;BF.html>`_  %IF{" 'set cc&#61;1,3,5,就直接出现标尺了' = '' " then="" else="- "}%set cc&#61;1,3,5,就直接出现标尺了
-   * `给 vim 增加查字典功能 <http://hi.baidu.com/ilqxd9l0vj/item/c1abc2d4665ba0e1b3f777a6>`_  %IF{" '这个很实用在写与看文档的时候' = '' " then="" else="- "}%这个很实用在写与看文档的时候
-   * `TxtBrowser&#34; plugin is a pla <http://www.vim.org/scripts/script.php?script&#95;id&#61;2899>`_  %IF{" '' = '' " then="" else="- "}%
 
    
 

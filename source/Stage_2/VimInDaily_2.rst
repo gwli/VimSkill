@@ -1,6 +1,7 @@
 Vim 的日常应用
 ==============
 
+
 用vim 来快速实现循环的功能
 --------------------------
 我们经常会一些一次性工作，但是量又有点大。写代码不值，不写的话，一个个手工删除太慢。那个时候就可以vim帮助你了。
@@ -15,7 +16,7 @@ Vim 的日常应用
 
    一下就有200多条怎么办， pnputil -d -f oem297.inf 一条一条来到时候才能完呢
 
-   .. code-block:: dos
+   .. code-block:: bash
 
       Published name :            oem297.inf
       Driver package provider :   VMware, Inc.
@@ -52,7 +53,7 @@ Vim 的日常应用
  
  #. 建立一个 clean.bat 文件
     
-    .. code-block:: dos
+    .. code-block:: bash
 
        pnputil -f -d oemXX.inf
  
@@ -66,5 +67,16 @@ Vim 的日常应用
        :wq
 
  #. 执行clean.bat 就OK了。    
+
+
+
+
+
+How to get insert date or time
+------------------------------
+
+#. one is use strftime("%y-%m-%d") [VimWiki]_
+#. use the python time and calendar module :py:mod:`time` and :py:mod:`calendar`
+
 
 

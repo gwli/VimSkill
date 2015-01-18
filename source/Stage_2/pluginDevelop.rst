@@ -64,6 +64,37 @@ command
 
 `vim calender <http://www.vim.org/scripts/script.php?script&#95;id&#61;52>`_  颜色的配置 就是利用键盘map捕捉键盘并且可以抓取环境变量例如当下的字符等，然后实现消息拦截，利用syn match 实现各种颜色的不同
 
+*vim 消息hook* 可以在用map来实现，并且控制各种环境，例如<Leader> <LocalLeader> <Plug><SID>
+
+vim 实现弹出菜单可以用 popup File,tearoff
+
+
+*command complete*  there is three key para, the ArgLead,Comline,CursorPos. :command:`:help -complete`
+
+.. code-block:: vim
+
+   It is possible to define customized completion schemes via the "custom,{func}"
+   or the "customlist,{func}" completion argument.  The {func} part should be a
+   function with the following signature: >
+   
+   	:function {func}(ArgLead, CmdLine, CursorPos)
+   
+   The function need not use all these arguments. The function should provide the
+   completion candidates as the return value.
+   
+   For the "custom" argument, the function should return the completion
+   candidates one per line in a newline separated string.
+   
+   For the "customlist" argument, the function should return the completion
+   candidates as a Vim List.  Non-string items in the list are ignored.
+   
+   The function arguments are:
+   	ArgLead		the leading portion of the argument currently being
+   			completed on
+   	CmdLine		the entire command line
+   	CursorPos	the cursor position in it (byte index)
+
+
 
 如何调试与开发
 ==============
@@ -84,3 +115,36 @@ vim 更强的是自带一个profiling 功能。
 
 
 如果使vim 崩溃了，可以使用 gcc与gdb 来定位与调试 具体可以看 http://vimcdoc.sourceforge.net/doc/debug.html
+
+
+如何查看map 的工作原理
+----------------------
+
+当你的插件装多了，就会出现冲突，就时候就要诊断了。
+
+.. code-block:: vim
+
+   To see what it is mapped to, and who mapped it, simply ask Vim with:
+   
+   :verbose map ys
+   
+   This will tell you what the mapping invokes, and also which file set up the mapping. From there it should be trivial to figure out which plugin it belongs to.
+    
+   If it is an insert-mode mapping (for example, the CTRL+S mapping of surround.vim), use:
+   
+  :verbose map! <C-S>
+
+  .. seealso:: 
+     http://vim.wikia.com/wiki/Troubleshooting
+     http://vim.wikia.com/wiki/Debug_unexpected_option_settings
+
+
+vba 
+===
+
+`vimball <http://man.lupaworld.com/content/manage/vi/doc/pi&#95;vimball.html>`_   是针对插件制作一种封装工具，就像tar一样
+`vim-addon-manager <http://blog.harrspy.com/vim-addon-manager>`_  插件管理器，就像debian的包管理机制一样
+
+
+http://stackoverflow.com/questions/2033078/how-to-install-a-vimball-plugin-with-vba-extension
+or  use :help vba to see the document.

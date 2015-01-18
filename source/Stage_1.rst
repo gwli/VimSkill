@@ -26,6 +26,7 @@ vim 的第一个要适应的那是 :command:`hjkl` 的使用。网上都有热�
 .. include:: Stage_1/vim_projectManagement.rst 
 .. include:: Stage_1/vim_regularExpression.rst
 .. include:: Stage_1/vim_command.rst
+.. include:: QuickEdit.rst
 
 
 

@@ -7,13 +7,16 @@ vim 的大部分命令都是来自于ex,而ex 是 ed 的改进版。包括sed的
 
 
 基本命令行前面都已经讲过了，所有的命令集都在 :command:`:exu`.  或者直接查看
-:comman:`:help index.txt`
+:command:`:help index.txt`
 
 这里只讲一些经常会用到，但是前面又没有提到命令吧. 按照模式来讲吧
 
 Vim经常被人吐槽的各种模式的切换。特别一个小的改动就来回切换切回来。vim 针对这些也有
 了一些改进，在每一种模式都会通过组合键提供临时执行其他模式的命令。执行完自动切回当前
 模式。
+
+各个模式下的命令
+================
 
 Insert mode 
 -----------
@@ -25,6 +28,10 @@ Insert mode
 :command:`CTRL-X submode` 自动补行，就是用它实现的 :command:`CTRL-X CTRL-L`. 
 :command:`CTRL-X s` 自动拼写检查
 :command:`CTRL-X CTRL-U` 按照自定义的补全函数来补全
+
+另外那就是通过定义 缩小来加速输入
+*inoreabbr,iabbr* 在case的时候如何用上这些功能，能够快速打出不，而不是去搜索。
+
 
 
 Normal mode
@@ -44,17 +51,21 @@ Normal mode
    若想用 CTRL-X, CTRL-C 和 CTRL-V, 这些标准的 MS-Windows 操作方式怎么办？有办法！
    用 $VIMRUNTIME\mswin.vim 这个脚本解决。你可以把下面这条命令放到你的 _vimrc 文
    件里:
-        source $VIMRUNTIME/mswin.vim
+
+       :command:`source $VIMRUNTIME/mswin.vim`
+
    这样一来 CTRL-C 就变成"复制"命令了，但是原先的 CTRL-C 是中止操作的命令呀，没
    办法，用 CTRL-Break 来结束任务吧。
-                                                        *CTRL-V-alternative*
-    因为 CTRL-V 被用做"粘贴"，所以你不能用它来启动"可视 块"的选择模式，不过可
-    以用 CTRL-Q 代替。你也可以在"插入"模式和"命令"模式中用 CTRL-Q 代替 CTRL-V。
-    但是 CTRL-Q 常常被用作控制流，这时候它在某些终端下就不好用了。
+
+   因为 CTRL-V 被用做"粘贴"，所以你不能用它来启动"可视 块"的选择模式，不过可
+   以用 CTRL-Q 代替。你也可以在"插入"模式和"命令"模式中用 CTRL-Q 代替 CTRL-V。
+   但是 CTRL-Q 常常被用作控制流，这时候它在某些终端下就不好用了。
     
    .. seealso::  `vim_windows手册 <http://man.chinaunix.net/newsoft/vi/doc/gui&#95;w32.html>`_  
 
-另一块就是窗口的操作了
+窗口的操作
+==========
+
 :command:`CTRL-W` 为前缀了， 
 :command:`CTRL-W f` 另开一个窗口打开当前光标下文件名
 :command:`CTRL-W z` 关掉预览窗口
@@ -64,6 +75,7 @@ Normal mode
 
 
 一些有用的查询命令
+------------------
 
 :command:`g CTRL-G` 查看光标的位置信息，在第几行，第几列，第几个char,第几个word,第几个byte.
 :command:`gv`  重新选中最近一次选择对象
@@ -77,7 +89,7 @@ Normal mode
 
 
 一些有用的z 命令
-:comand:`zr` 打开折行
+:command:`zr` 打开折行
 :command:`z=` 给出拼写提示
 
 
@@ -90,17 +102,56 @@ command:`J` 当前所选所有行，拼接成一行，这个在在字符串与�
 
 ex 命令
 =======
+
 前面大部分命令都有对应的 ex 命令。 全部的ex 命令可以查看:command:`:h holy-grail`
-这里也讲一些最常用命令，那就是 :command:`:g` 
+
+这里只讲最有用命令
+
+ex 命令管道
+-----------
+
+:help :|  查看多行命令同行的问题。
+
+let i = i | let a=3
+
+
+命令 :g
+-------
 
 .. code-block:: vim
     
    :[range]g[lobal]{pattern}/[cmd]
 
+:help  g:  来查看命令的说明，工作原理，两遍的scan,第一次标记，第二次执行命令，并且支持:g!反逻辑。
+
 当你想条件式的替换的时候，利用 :command:`:g` 是再合适不过了。 这个会在后面的例子体现出来，这个命令再加上宏录制功能，就无非强大了。
 另外那就是用查询了，例如  
 
-:command:`g/pattern/z#5| echo "-----------------------"` 自己试一下。
+处理偶数行处理 
+^^^^^^^^^^^^^^
+perform a substitute on every other line
+
+:command:`:g/^/ if line('.')%2|s/^/zz /`
+
+display prettily
+^^^^^^^^^^^^^^^^
+
+.. code-block:: vim
+
+   :g/<pattern>/z#.5           : display with context
+   :g/<pattern>/z#.5|echo "=========="  : display beautifully
+
+
+如何在ex 执行其他模式的命令
+===========================
+
+Combining g// with normal mode commands
+
+.. code-block:: vim
+   
+   :g/|/norm 2f|r*     " replace 2nd | with a star
+
+
 
 
 Vim 重定向  example
@@ -118,18 +169,36 @@ Vim 重定向  example
 
 与外部shell的交互
 -----------------
+
+vim 默认使用的shell 是可以通过 :option:`shell` 得到， 想在vim 加载不同shell, 设置不同&shell值就可以了。
+
+
 !!, ! 可以 external cmd 交互。
 
-vim 本身也是可以当做sed,或者awk 一样的命令来用的。
+.. seealso:: http://www.softpanorama.org/Editors/Vimorama/vim_piping.shtml
+
+
+vim 本身也是可以当做sed,或者awk 一样的命令来用的。 首先要看一下其 *启动参数*
+#. - 可以直接从stdin接受输入的，可以直接接受管道来的值。
+#. *+* 可直接加行号打开就直接跳到目标行。
+
+   .. csv-table::
+   
+     + , 行号 
+     +/ , 正则表表达式 
+     +{} , 命令 相当于-c
+
+#. -oOp 可以同时打开多个窗口与tab pages.   
+#. vim -dev 直接当做串口使用。 根据自己的应用场景来挖掘吧。
+
+这个功能在代码移值的时候特别有用，你要不断去对比，查找问题，最后输入你可以输入到vim 中来这样可以大大的加快你的速度。另外那就是 find  -iname 不区分大小，然后 :command:`find . -iname "xfadfa" |xargs |grep af | vim` 这样大大加快的自己的速度。
+并且在添加几个系统命令，例如常用地址，变成变量，就会很方便。
 
 :command:`vim -E -s -c "let g:html_no_progress=1" -c "syntax on" -c "set ft=c" -c "runtime syntax/2html.vim" -cwqa myfile.c` 
 
 转换成html.
 
-内部分命令行 pipe
------------------
 
-let i = i | let a=3
 
 另外那就是录制
 --------------
@@ -146,7 +215,7 @@ vim 本身支持排版的，vim  自身的help文档就都是 vim 直接排版�
 :command:`:ri` 右对齐
 :command:`:le` 左对齐
 
-:comman:`gq` 执行 *formatexpr*
+:command:`gq` 执行 *formatexpr*
 
 *echon/echoerr/echoh/echom/* 这一系列的命令可以控制输出的各种格式。
 
@@ -164,11 +233,13 @@ vim 本身支持排版的，vim  自身的help文档就都是 vim 直接排版�
 :command:`:10,40harcopy` 只打印  10-40行，同理对于 :command:`:TOhtml` 也是一样的。
 
 diff 下的命令
-============
+=============
+
 如何比较两个不同的文件，如何比较同一个文件两部分，或者不同文件的两部分。
 
 基本命令
 --------
+
 :command:`]c` 跳转到下一个差异处
 :command:`]c` 跳转到上一个差异处
 :command:`do` 当前的差异merge到另方
@@ -177,20 +248,17 @@ diff 下的命令
 
 两个文本部分内容的对比
 ----------------------
+
 可以借助 :command:`g:html_diff_one_file`.
+
+
+ how to display the total number of differences between the files?
+
+-- Main.GangweiLi - 22 Jun 2012
+
 
 如何添加一条命令
 ================
 
 两种方式，直接用keymapping 来完成 ex 命令的调用 另一种直接调用vim的函数来实现一个命令行命令 具体参考中级篇的内容
 
-   * `Vim 中文输入法 <http://vim.sourceforge.net/scripts/script.php?script&#95;id&#61;2506>`_  %IF{" 'VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 ' = '' " then="" else="- "}%VimIM 是一个基于Vim的嵌入式中文输入法。  不启动中文输入法，不换模式，就可以输入中文。 不打开弹出式菜单，不敲中文，也可以搜索中文。 　　　　 中文输入与英文输入不再相互折腾。 中文搜索与英文搜索不再分为彼此。并且有云输入 
-   * `Vimcdoc <http://vimcdoc.sourceforge.net/>`_  %IF{" 'online document' = '' " then="" else="- "}%online document
-   * `repeat.vim <http://www.vim.org/scripts/script.php?script&#95;id&#61;2136>`_  , %IF{" 'this enhanc.' = '' " then="" else="- "}% 当需要重复一些操作的时候，最简单的那就是 "."操作。还有一种那就是 * :undojoin* 命令。另外就是看 `vim repeat documentation <http://vimdoc.sourceforge.net/htmldoc/repeat.html>`_  .如果功能更复杂，这个插件可能适合你。
-   * `vim-addon-manager <http://blog.harrspy.com/vim-addon-manager>`_  %IF{" '插件管理器，就像debian的包管理机制一样' = '' " then="" else="- "}%插件管理器，就像debian的包管理机制一样
-   * `csv.vim <http://www.vim.org/scripts/script.php?script&#95;id&#61;2830>`_  %IF{" 'vim超强的插件，用它之后就像在使用excel一样，但是同时具有Vim的各种功能' = '' " then="" else="- "}%vim超强的插件，用它之后就像在使用excel一样，但是同时具有Vim的各种功能
-   * `Conque Shell : Run interactive commands inside a Vim buffer  <http://www.vim.org/scripts/script.php?script&#95;id&#61;2771>`_  %IF{" '自己也开始让vim走上emacs之路了' = '' " then="" else="- "}%自己也开始让vim走上emacs之路了
-   * `程序设计时常用的几个参见 <http://edyfox.codecarver.org/html/vimplugins.html>`_  %IF{" 'taglist,A,WinManager,echofunc,complete' = '' " then="" else="- "}%taglist,A,WinManager,echofunc,complete
-   * `vimball <http://man.lupaworld.com/content/manage/vi/doc/pi&#95;vimball.html>`_  %IF{" 'vimball 是针对插件制作一种封装工具，就像tar一样' = '' " then="" else="- "}%vimball 是针对插件制作一种封装工具，就像tar一样
-   * `Vim 7.3正式版：新功能介绍 <http://xbeta.info/vim73b.htm>`_  %IF{" '&#42;conceal text&#42; Vim支持语法高亮，有的语法高亮需要一些额外的标注符，它们并不是文本内容的一部分。但是实现各种折叠功能，但是这些标记符号如何显示，就可以conceal text 功能。另外更重要的功能，那就是&#42;rnu&#42; 相对行号。用于计算距离的时候是非常方便的。' = '' " then="" else="- "}% *conceal text* Vim支持语法高亮，有的语法高亮需要一些额外的标注符，它们并不是文本内容的一部分。但是实现各种折叠功能，但是这些标记符号如何显示，就可以conceal text 功能。另外更重要的功能，那就是 *rnu* 相对行号。用于计算距离的时候是非常方便的。
-   * `vim encoding 文件乱码的问题 <http://edyfox.codecarver.org/html/vim&#95;fileencodings&#95;detection.html>`_  %IF{" '' = '' " then="" else="- "}%

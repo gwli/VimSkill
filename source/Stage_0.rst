@@ -4,4 +4,5 @@
 
 
 .. include:: Stage_0/Introduction.rst  
-.. include:: Stage_0/Target.rst 
+.. include:: Stage_0/QuestionOfText.rst
+.. include:: Stage_0/Target.rst

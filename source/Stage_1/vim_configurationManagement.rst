@@ -2,16 +2,19 @@
 ************
 
 玩Vim的人都会改vim 配置，但是做的好没有几个。大部分都是怎么在网上抄一段，直接放在.vimrc文件里，最后这个文件奇大无比，并且vim的启动也变得很慢，这个还是还好的，更烦的那是不配置冲突了，例如对.c文件的配置与.java是冲突的，假如这些.c 用四个字符缩进的，而.java是用3字符缩进的。有的人都是每一次手工去改vimrc. 每切换一次环境就重写一次。很是麻烦，其实vim早就给你解决了这个问题，只是大部分没有深入了解而己。
-这一节的主要内容:
+这一节的主要内容
 
-..  
-  引用下面各节的标题
+..
+
+   引用各节标题
+
 
 
 vim 配制文件路径
 ================
 
 要想知道配置在哪里, 直接 :command:`:help vimrc` 就可以找到，vim的配置文件分两层，global and local:
+
 #. *linux*, global 一般是在 :file:`/etc/vim/vimrc` 或者 :file:`/usr/share/vim`.  local 是一般都是 :file:`$HOME/.vim/vimrc` 下面
 #. *Windows*  global 是一般是在 :file:`$VIM/vimrc` 这个一般是在 :file:`C:\Program Files (x86)\Vim`, local同linux一样，不过 windows下的$HOME是指的 :file:`C:\Users\<userName>` 
 
@@ -67,9 +70,7 @@ vim 配制文件路径
 #. 如果想做再好一些呢，把这些配置文件用git管理起来，放在github上面。这样出了错可以随时恢复，git clone 就搞定了。     
 
 
-mode line
----------
-
+*mode line*
 
 另一种自动识别的机制那就是用mode line. 那就是开头或者结尾用注释的方式来写vim mode line. 如下
 
@@ -88,5 +89,5 @@ mode line
 vim 配置文件是如何加载的
 ========================
 
-具体可以查看 :command:`:help starting.txt`
+具体可以查看 :command:`:help starting.txt` 这个在 :command:`:help syntax.txt` 里更详细的描述。
 
