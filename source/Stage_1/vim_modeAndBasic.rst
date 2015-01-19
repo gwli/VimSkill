@@ -100,6 +100,8 @@ vim 的字词句
 """"""""
 :command:`ctrl+F` 向下滚一整屏，:command:`ctrl+B` 向上滚一整屏，:command:`ctrl+D` 向下滚半屏， :command:`ctrl+U` 向上滚半屏，:command:`ctrl+Y` 向下滚一行，:command:`ctrl+E` 向上滚一行。
 
+因为vim没有页的概念，你可以把屏当做页来用吧。
+
 
 跳转
 ^^^^
