@@ -9,7 +9,13 @@
 从SGML 到HTML再到 XML，再到  YAML以及后面的Markdown语法
 
 troff -> tex -> 可计算文档
+
 .. graphviz:: 
 
-   digraph 
+   digraph  flow {
+    
+   "make tree" -> "parse the Tree" -> "filter"; 
+   
+   }
+
 
