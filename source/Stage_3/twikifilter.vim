@@ -1,7 +1,7 @@
 " process the link
 "
 echohl MatchParen | echo "process the link" | echohl None
-%s/\[\[\(.\{-}\)]\[\(.\{-}\)]]/`\2 <\1>`_/g
+%s/\[\[\(.\{-}\)]\[\(.\{-}\)]]/`\2 <\1>`_ /g
 " process %IF{ ....}% MACRO afer the list
 %s/%IF{.\{-}}%//g
 
@@ -15,7 +15,7 @@ echohl MatchParen | echo "process graphviz" | echohl None
 " process graphviz
 "
 g/<dot>/,/<\/dot>/s/.*/   &/
-g/<dot>/,/<\/dot>/s/.*<dot>/.. graphviz::\r
+g/<dot>/,/<\/dot>/s/.*<dot>/\r.. graphviz::\r
 %s/<\/dot>/\r/g
 
 echohl MatchParen | echo "process verbatim" | echohl None
