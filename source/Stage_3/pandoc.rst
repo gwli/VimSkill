@@ -42,6 +42,7 @@ Pandoc的 filter
 
 可以通过管道或也可以 :option:`--filter filter.py` 来用。
 
+
 如看其pandoc 的内部格式
 -----------------------
 
@@ -49,9 +50,59 @@ Pandoc的 filter
 
 其内部结构定义 可以考能 `pandoc type definiton <http://hackage.haskell.org/package/pandoc-types>`_ 
 
+内部采用 `JSON <http://www.json.org/json-zh.html>`_ 来做为语法的。
+
+分两部分，可以直接从pandocfilters.py中得到。
+
+.. csv-table:: Block
+
+   Plain = elt('Plain', 1)
+   Para = elt('Para', 1)
+   CodeBlock = elt('CodeBlock', 2)
+   RawBlock = elt('RawBlock', 2)
+   BlockQuote = elt('BlockQuote', 1)
+   OrderedList = elt('OrderedList', 2)
+   BulletList = elt('BulletList', 1)
+   DefinitionList = elt('DefinitionList', 1)
+   Header = elt('Header', 3)
+   HorizontalRule = elt('HorizontalRule', 0)
+   Table = elt('Table', 5)
+   Div = elt('Div', 2)
+   Null = elt('Null', 0)
+
+.. csv-table:: inline elements
+
+   Str = elt('Str', 1)
+   Emph = elt('Emph', 1)
+   Strong = elt('Strong', 1)
+   Strikeout = elt('Strikeout', 1)
+   Superscript = elt('Superscript', 1)
+   Subscript = elt('Subscript', 1)
+   SmallCaps = elt('SmallCaps', 1)
+   Quoted = elt('Quoted', 2)
+   Cite = elt('Cite', 2)
+   Code = elt('Code', 2)
+   Space = elt('Space', 0)
+   LineBreak = elt('LineBreak', 0)
+   Math = elt('Math', 2)
+   RawInline = elt('RawInline', 2)
+   Link = elt('Link', 2)
+   Image = elt('Image', 2)
+   Note = elt('Note', 1)
+   Span = elt('Span', 2)
+   
+http://www.cnblogs.com/ouxiaogu/archive/2013/09/16/3323507.html
 
 用pandoc转换从twiki到rst
 ========================
+
+
+对于它的应用，不仅要知道其reader的处理，还要知道 writer处理，然后才可以真正掌握灵活的处理。
+
+例如pandoc是对于 graphviz 的本身结构识别就太格式，并且reader 的结构，还是不很清楚。
+用来起还是比较麻烦。
+没有直接处理来的快速。
+
 
 requiremnt
 ----------
