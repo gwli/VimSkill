@@ -1,20 +1,14 @@
 vim 的命令
 **********
 
-vim 的大部分命令都是来自于ex,而ex 是 ed 的改进版。包括sed的命令集基于ed。
-所以也就会发现在这几个工具的命令集都差不多。并且RCS的版本格式也这样的，
-并且diff的输出也支持ex命令。其实patch也是利用ex的命令集的。
+vim 的大部分命令都是来自于ex，而ex 是 ed 的改进版。包括sed的命令集基于ed。所以也就会发现这几个工具的命令集都差不多。并且RCS的版本格式也这样的，并且diff的输出也支持ex命令，其实patch也是利用ex的命令集的。
 
-
-基本命令行前面都已经讲过了，所有的命令集都在 :command:`:exu`.  或者直接查看
-:command:`:help index.txt`
+基本命令行前面都已经讲过了，都在 :command:`:exu`中.  或者直接查看
+:command:`:help index.txt
 
 这里只讲一些经常会用到，但是前面又没有提到命令吧. 按照模式来讲吧
 
-Vim经常被人吐槽的各种模式的切换。特别一个小的改动就来回切换切回来。vim 针对这些也有
-了一些改进，在每一种模式都会通过组合键提供临时执行其他模式的命令。执行完自动切回当前
-模式。
-
+Vim经常被人吐槽的各种模式的切换。特别一个小的改动就来回切换切回来。vim 针对这些也有了一些改进，在每一种模式都会通过组合键提供临时执行其他模式的命令，执行完自动切回当前模式。 
 各个模式下的命令
 ================
 
@@ -24,15 +18,13 @@ Insert mode
 :command:`CTRL-D` 缩进的，是按照 tab长度来走的。
 :command:`CTRL-Y` 自动复制上行对应列的字母
 :command:`CTRL-E` 自动复制下行对应列的字符
-:command:`CTRL-O` 临时切到normal mode 执行一条命令，再自动切回insert mode,相反过程是 :command:`r` 替换当前的字母然后切回到Nomral模式。
+:command:`CTRL-O` 临时切到normal mode 执行一条命令，再自动切回insert mode，相反过程是 :command:`r` 替换当前的字母然后切回到Nomral模式。
 :command:`CTRL-X submode` 自动补行，就是用它实现的 :command:`CTRL-X CTRL-L`. 
 :command:`CTRL-X s` 自动拼写检查
 :command:`CTRL-X CTRL-U` 按照自定义的补全函数来补全
 
 另外那就是通过定义 缩小来加速输入
-*inoreabbr,iabbr* 在case的时候如何用上这些功能，能够快速打出不，而不是去搜索。
-
-
+*inoreabbr，iabbr* 在case的时候如何用上这些功能，能够快速打出不，而不是去搜索。
 
 Normal mode
 -----------
@@ -48,7 +40,7 @@ Normal mode
 
 .. note:: 
 
-   若想用 CTRL-X, CTRL-C 和 CTRL-V, 这些标准的 MS-Windows 操作方式怎么办？有办法！
+   若想用 CTRL-X， CTRL-C 和 CTRL-V， 这些标准的 MS-Windows 操作方式怎么办？有办法！
    用 $VIMRUNTIME\mswin.vim 这个脚本解决。你可以把下面这条命令放到你的 _vimrc 文
    件里:
 
@@ -66,7 +58,7 @@ Normal mode
 窗口的操作
 ==========
 
-:command:`CTRL-W` 为前缀了， 
+:command:`CTRL-W` 为前缀
 :command:`CTRL-W f` 另开一个窗口打开当前光标下文件名
 :command:`CTRL-W z` 关掉预览窗口
 :command:`CTRL-W |` 设置窗口的宽度
@@ -77,7 +69,7 @@ Normal mode
 一些有用的查询命令
 ------------------
 
-:command:`g CTRL-G` 查看光标的位置信息，在第几行，第几列，第几个char,第几个word,第几个byte.
+:command:`g CTRL-G` 查看光标的位置信息，在第几行，第几列，第几个char，第几个word，第几个byte.
 :command:`gv`  重新选中最近一次选择对象
 :command:`ga`  查看当前字符的编码的十进制，十六进制，八进制显示
 :command:`gm`  跳到这一行的中间
@@ -85,7 +77,7 @@ Normal mode
 :command:`gx`   执行当前光标下的命令
 :command:`gs`   sleep 函数默认是1秒
 :command:`g~[motion]`  翻转当前行大小写
-:command:`gU[motion]`  变大写, :command:`gu[motion]` 变小写
+:command:`gU[motion]`  变大写， :command:`gu[motion]` 变小写
 
 
 一些有用的z 命令
@@ -96,8 +88,8 @@ Normal mode
 visual mode
 -----------
 
-command:`a"` 高亮一个双引号字符串,同理还的有 :command:`a'`, :command:`a(` 等等 这在代码除错的时候非常用。
-command:`J` 当前所选所有行，拼接成一行，这个在在字符串与列表之间的转换起来非常的方便，直接用替换就可以实现split的功能。
+command:`a"` 高亮一个双引号字符串，同理还的有 :command:`a'`， :command:`a(` 等等 这在代码除错的时候非常用。
+command:`J` 当前所选所有行，拼接成一行，这个在字符串与列表之间的转换时非常的方便，直接用替换就可以实现split的功能。
 
 
 ex 命令
@@ -122,7 +114,7 @@ let i = i | let a=3
     
    :[range]g[lobal]{pattern}/[cmd]
 
-:help  g:  来查看命令的说明，工作原理，两遍的scan,第一次标记，第二次执行命令，并且支持:g!反逻辑。
+:help  g:  来查看命令的说明，工作原理，两遍的scan，第一次标记，第二次执行命令，并且支持:g!反逻辑。
 
 当你想条件式的替换的时候，利用 :command:`:g` 是再合适不过了。 这个会在后面的例子体现出来，这个命令再加上宏录制功能，就无非强大了。
 另外那就是用查询了，例如  
@@ -170,23 +162,23 @@ Vim 重定向  example
 与外部shell的交互
 -----------------
 
-vim 默认使用的shell 是可以通过 :option:`shell` 得到， 想在vim 加载不同shell, 设置不同&shell值就可以了。
+vim 默认使用的shell 是可以通过 :option:`shell` 得到， 想在vim 加载不同shell， 设置不同&shell值就可以了。
 
 
-!!, ! 可以 external cmd 交互。
+!!， ! 可以 external cmd 交互。
 
 .. seealso:: http://www.softpanorama.org/Editors/Vimorama/vim_piping.shtml
 
 
-vim 本身也是可以当做sed,或者awk 一样的命令来用的。 首先要看一下其 *启动参数*
+vim 本身也是可以当做sed，或者awk 一样的命令来用的。 首先要看一下其 *启动参数*
 #. - 可以直接从stdin接受输入的，可以直接接受管道来的值。
 #. *+* 可直接加行号打开就直接跳到目标行。
 
    .. csv-table::
    
-     + , 行号 
-     +/ , 正则表表达式 
-     +{} , 命令 相当于-c
+     + ， 行号 
+     +/ ， 正则表表达式 
+     +{} ， 命令 相当于-c
 
 #. -oOp 可以同时打开多个窗口与tab pages.   
 #. vim -dev 直接当做串口使用。 根据自己的应用场景来挖掘吧。
@@ -230,7 +222,7 @@ vim 本身支持排版的，vim  自身的help文档就都是 vim 直接排版�
 
 并且都还支持部分的输出 
 
-:command:`:10,40harcopy` 只打印  10-40行，同理对于 :command:`:TOhtml` 也是一样的。
+:command:`:10，40harcopy` 只打印  10-40行，同理对于 :command:`:TOhtml` 也是一样的。
 
 diff 下的命令
 =============
