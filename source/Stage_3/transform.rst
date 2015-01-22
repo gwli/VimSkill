@@ -5,13 +5,13 @@
 
 例如 twiki 到 rst 的转换。
 
-.. ::
+.. code-block:: html
    
    ---++++ Header3
 
 到
 
-.. ::
+.. code-block:: html
 
    Header3
    =======
