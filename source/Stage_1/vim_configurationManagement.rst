@@ -11,11 +11,12 @@
 vim 配制文件路径
 ================
 
-要知道配置在哪里， 直接 :command:`:help vimrc` 就可以找到，vim的配置文件分两层，global and local。*linux*中的 global 文件一般在 :file:`/etc/vim/vimrc` 或者 :file:`/usr/share/vim`. local 文件一般都在:file:`$HOME/.vim/vimrc` 下面。 *Windows* 中 global 一般在 :file:`$VIM/vimrc` 路径一般是在 :file:`C:\Program Files (x86)\Vim`， local同linux一样，不过 windows下的$HOME指的是 :file:`C:\Users\<userName>`.
-（这里应该讲讲怎么打开这个文件，我感觉我使用:file:`$VIM/vimrc`, 并不能打开文件）
+要知道配置在哪里， 直接 :command:`:help vimrc` 就可以找到，vim的配置文件分两层，global and local。 *linux* 中的 global 文件一般在 :file:`/etc/vim/vimrc` 或者 :file:`/usr/share/vim`. local 文件一般都在:file:`$HOME/.vim/vimrc` 下面。 *Windows* 中 global 一般在 :file:`$VIM/vimrc` 路径一般是在 :file:`C:\Program Files (x86)\Vim`， local同linux一样，不过 windows下的$HOME指的是 :file:`C:\Users\<userName>`.
+（这里应该讲讲怎么打开这个文件，我感觉我使用 :file:`$VIM/vimrc` , 并不能打开文件）
+
 .. note::
 
-   如果你需要自定义你的配置文件，你可以配置 vim的编译选项.
+   如果你需要自定义你的配置文件的位置时，你可以配置 vim的编译选项.
    
    .. code-block:: make
       
@@ -23,6 +24,7 @@ vim 配制文件路径
 
 每个目录里都会有一个 :file:`README.txt` ，如果使用直接查看这个文档就可以了。
 (这里不连贯，是什么)
+
 .. csv-table:: Vim configuration director：
    :header: Name, Content , Remark
   

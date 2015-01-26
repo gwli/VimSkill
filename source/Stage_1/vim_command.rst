@@ -9,6 +9,7 @@ vim 的大部分命令都是来自于ex，而ex 是 ed 的改进版。包括sed�
 这里只讲一些经常会用到，但是前面又没有提到命令吧. 按照模式来讲吧
 
 Vim经常被人吐槽的各种模式的切换。特别一个小的改动就来回切换切回来。vim 针对这些也有了一些改进，在每一种模式都会通过组合键提供临时执行其他模式的命令，执行完自动切回当前模式。 
+
 各个模式下的命令
 ================
 
@@ -119,6 +120,22 @@ let i = i | let a=3
 当你想条件式的替换的时候，利用 :command:`:g` 是再合适不过了。 这个会在后面的例子体现出来，这个命令再加上宏录制功能，就无非强大了。
 另外那就是用查询了，例如  
 
+命令 :t
+-------
+
+例如把自把标题一下自动添加=号呢
+
+.. code-block::
+   
+   header1
+     ||
+     \/
+   header1
+   =======
+
+:command:`t.|s/./=/g` 就可以了，如果标题是中文  :command:`t.|s/./==/g`
+
+
 处理偶数行处理 
 ^^^^^^^^^^^^^^
 perform a substitute on every other line
@@ -142,6 +159,7 @@ Combining g// with normal mode commands
 .. code-block:: vim
    
    :g/|/norm 2f|r*     " replace 2nd | with a star
+
 
 
 
