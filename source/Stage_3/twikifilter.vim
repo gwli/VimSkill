@@ -37,9 +37,26 @@ echohl MatchParen | echo "process the *list" | echohl None
 %s/   \* /#. /
 %s/   1\. /#. /
 
+" Process the table
+"
+echohl MatchParen |echo "process the table" |echohl None
+
+%s/^[^|]*\_s\zs\(\_^ *|\_.\{-}\)\ze\_^[^|]*$/\r.. csv-table:: \r\r&\r/gc
+%g/^ *|/s/|/,/g
+%g/^ *,/s/^ *, \{0,2}/   /gc
+
+
+" Process the math
+"
+echohl MatchParen |echo "process the math" |echohl None
+%s/%\$\(.*\)\$%/\r.. math:: \1/gc
 
 
 
+" Process the %META
+"
+echohl MatchParen |echo "process the Meta" |echohl None
+:g/%META/d
 
 
 echohl MatchParen | echo ":)(:  Finish" | echohl None

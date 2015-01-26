@@ -3,8 +3,6 @@
 
 `Pandoc <http://johnmacfarlane.net/pandoc/>`_ 现在支持常见的各种文档的格式。并且基本格式之间相互转换。
 
-可以通过filter来实现对插件语法的支持。
-
 
 .. graphviz::
    
@@ -12,13 +10,14 @@
       reader -> ast -> writer;
    }
 
+可以通过filter来实现对插件语法的支持。但是filter只是在reader阶段的，如果还需要writer阶段的支持话就还需要template的支持了。
+
+
 所以输入与输出是独立的，但是中间这个AST 就是异常通用兼容。
 
 #. 初步试验
   
    :command:`pandoc -f twiki abc.txt -t rst -o abc.rst`
-
-
 
 
 直接生成中文的pdf 
@@ -93,8 +92,15 @@ Pandoc的 filter
    
 http://www.cnblogs.com/ouxiaogu/archive/2013/09/16/3323507.html
 
+
+
+pandoc 手工编译
+===============
+从官网下载代码,或者直接从github上clone, 然后解压后，直接 :command:`make` 就可以了。
+
 用pandoc转换从twiki到rst
 ========================
+
 
 
 对于它的应用，不仅要知道其reader的处理，还要知道 writer处理，然后才可以真正掌握灵活的处理。
