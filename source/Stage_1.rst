@@ -19,6 +19,7 @@
 .. include:: Stage_1/vim_projectManagement.rst 
 .. include:: Stage_1/vim_regularExpression.rst
 .. include:: Stage_1/vim_command.rst
+.. include:: Stage_1/vim_options.rst
 .. include:: QuickEdit.rst
 
 
