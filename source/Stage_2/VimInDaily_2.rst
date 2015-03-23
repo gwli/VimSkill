@@ -80,3 +80,12 @@ How to get insert date or time
 
 
 
+查看代码中non-ascii 字符
+------------------------
+
+这个在python的中经常会遇到。
+
+.. code-block:: bash
+    
+   :set hls
+   /[^\x00-\x7F]

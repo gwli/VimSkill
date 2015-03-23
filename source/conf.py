@@ -35,7 +35,6 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
-    'sphinx.ext.graphviz',
     'sphinx.ext.viewcode',
 ]
 
@@ -192,21 +191,25 @@ htmlhelp_basename = 'VimSkilldoc'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+'papersize': 'a4paper',
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+'pointsize': '12pt',
+
+'lbael': '\\usepackage[english]{babel}',
 
 # Additional stuff for the LaTeX preamble.
-'preamble': """
-
-\\hypersetup{unicode=true}
-\\usepackage{CJKutf8}
-\\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
-\\AtEndDocument{\\end{CJK}}
-"""
-,
-
+'preamble': ''' 
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setCJKmainfont[BoldFont=SimHei, ItalicFont=STKaiti]{SimSun}
+\setCJKmonofont[Scale=0.9]{STKaiti}
+\setCJKfamilyfont{song}[BoldFont=SimSun]{SimSun}
+\setCJKfamilyfont{sf}[BoldFont=SimSun]{SimSun}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+'''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
