@@ -96,6 +96,7 @@ http://www.cnblogs.com/ouxiaogu/archive/2013/09/16/3323507.html
 
 pandoc 手工编译
 ===============
+
 从官网下载代码,或者直接从github上clone, 然后解压后，直接 :command:`make` 就可以了。
 
 用pandoc转换从twiki到rst
@@ -120,4 +121,17 @@ requiremnt
 #. 其他。。
 
 
+
+生成一个简单的dailyTodo
+=======================
+
+这个使用pandoc 生成一个单页的html还是非常的方便。
+
+pandoc --self-contained Today.rst -o ToDo.html -H default.css 
+mutt -e "set content_type=text/html" -s "DailyToDo" email@address < ToDo.html
+
+有点不爽的那就是pandoc对于rst 的指令并不是那么完全。 对于 table并没有支持 csv-table等等，
+只支持了简单的 ASCII table. 
+
+但是对于一个dailyToDo来说应该是足够了。 现在想想完全用自己买一个todo应该不麻烦。
 
