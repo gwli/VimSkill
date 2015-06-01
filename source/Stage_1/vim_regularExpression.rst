@@ -161,4 +161,9 @@ function-search-undo".
 
 see gmail
 
+提取XML或者HTML中文本
+^^^^^^^^^^^^^^^^^^^^^
+
+:command:`%s/<.\{-}>/\r/gc` 是非常的高效。
+
 -- Main.GangweiLi - 22 Jun 2012
