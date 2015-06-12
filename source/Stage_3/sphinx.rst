@@ -111,6 +111,13 @@ singlehtml
 ftp://ftp.ams.org/ams/doc/amsmath/short-math-guide.pdf
 
 
+生成pdf
+=======
+
+默认的documentclass只有两种 howto,manual, 或者自定义，没有也行
+但如果title 指定了中文，同时指定了manual就报错了，应该是manual对中文的支持不够。
+
+
 sphinx 进行二次开发
 ===================
 
