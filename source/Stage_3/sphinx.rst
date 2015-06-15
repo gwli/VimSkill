@@ -117,6 +117,8 @@ ftp://ftp.ams.org/ams/doc/amsmath/short-math-guide.pdf
 默认的documentclass只有两种 howto,manual, 或者自定义，没有也行
 但如果title 指定了中文，同时指定了manual就报错了，应该是manual对中文的支持不够。
 
+添加对文献的支持用 bibtex 参考 http://sphinxcontrib-bibtex.readthedocs.org/en/latest/usage.html。
+现在的问题是添加文献，没有索引号，但是第一版是可以的，看看是哪里配置做了。
 
 sphinx 进行二次开发
 ===================
