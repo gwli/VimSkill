@@ -11,3 +11,36 @@ template 主要是解决就是复用问题。
 
 再复杂一些，可以外界系统进行交互，例如 os, 或者数据库。
 这个的实现，一般都是内嵌一个语言的解析器来搞定的。基本一个语言都有各种数据的接口。
+
+
+list 的生成
+===========
+
+这个最简单，只要加一个简单的计数，复杂一点再加上indent。 无非进去一层重新计数。
+采用深度优先的来解决
+
+
+
+
+table的生成
+===========
+
+各个看起来有点难，其实也很简单，对于html,xml的表格就不用说了，直接生成指令就行了。
+对于字符表格生成，看起来很难。只直接用一个列表来存储一个table,一行是一个元素。
+
+单行表格生成
+------------
+
+#. 统计的各行各例的字符数，
+#. 找到各例的最大值
+#. 按照样式以及对齐方式逐行生成就行
+
+.. code-block:: python
+   
+   #count
+   zip(*[[len(item) for item in row] for row in grid])
+
+ 
+http://stackoverflow.com/questions/11347505/what-are-some-approaches-to-outputting-a-python-data-structure-to-restructuredte
+
+并且在python 中有现成的 tabulate 包，可以直接生成各种表格。
