@@ -131,7 +131,8 @@ pandoc --self-contained Today.rst -o ToDo.html -H default.css
 mutt -e "set content_type=text/html" -s "DailyToDo" email@address < ToDo.html
 
 有点不爽的那就是pandoc对于rst 的指令并不是那么完全。 对于 table并没有支持 csv-table等等，
-只支持了简单的 ASCII table. 
+只支持了简单的 ASCII table.  生成 ascii table也很容易自己实现或者直接使用 python tabulate package. 就行了。再加 rstcloth可以直接生成rst, 然后再pandoc 来生成各种格式。自己需要写一种markdown就够了。 
 
 但是对于一个dailyToDo来说应该是足够了。 现在想想完全用自己买一个todo应该不麻烦。
+
 
