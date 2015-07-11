@@ -44,3 +44,14 @@ table的生成
 http://stackoverflow.com/questions/11347505/what-are-some-approaches-to-outputting-a-python-data-structure-to-restructuredte
 
 并且在python 中有现成的 tabulate 包，可以直接生成各种表格。
+
+
+对于编码的处理
+==============
+
+对于vim, 有 ``encoding``, ``fileencoding`` 等等。
+对于python来编程语言来都说，在读写文件的时候都会有一个  encoding属性，平时大家都不写，对于C/C++来说，就是那些IOStream大显身手的
+时候。
+如何快速查看编码，直接用浏览器打开就查看了，它是支持编码最全面的。
+
+同时需要转换的可以用iconv来实现批量的转化。
