@@ -166,4 +166,9 @@ see gmail
 
 :command:`%s/<.\{-}>/\r/gc` 是非常的高效。
 
+快速折行
+^^^^^^^^
+
+:command:`%s/.\{36}/&\r/gc` 每36个字符一行。
+
 -- Main.GangweiLi - 22 Jun 2012

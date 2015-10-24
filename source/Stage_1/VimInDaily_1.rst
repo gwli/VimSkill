@@ -7,8 +7,7 @@
 对于个语言支持最基本就是 comments 的支持，而vim 是能够自动实别的大部分的语言的comments,主要是通过  
 *comments* 格式，有的时候可以借用某种语言的注释格式，vim支持最好的那就是C。
 
--- Main.GangweiLi - 16 Sep 2012
-
+IDE的功能之一那就是语法检查。
 
 *状态栏* 
 
@@ -94,6 +93,8 @@ Make vim as terminal
 --------
 
 网速慢的时候，以及想充分利用自己本地vim环境时，可以直接像untralEdit一样远程编辑。`edit remote file by vim <http://tigerlee.me/p/edit-remote-file-by-vim/>`_ . 
+
+这个功能来自己来说，也是很重要的，这样可以避免搭建更多的vim环境。
 
 但是如vimserver是什么还是没有搞明白。
 现在明白了，可以给已经打开vim发送命令。另外查看原始字符可以使用`set list`来查看
