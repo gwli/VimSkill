@@ -47,16 +47,16 @@ vim 的字词句
 
 以后移动编辑都是这些单位的，除了字母本身，没有头与尾之外。其他几个单位都是有的。 以前都是按行操作，结构化，定义好分界符是可以 *按块操作* ，:g,:v都可以。
 
-.. csv-table:: ediit command
+.. csv-table:: edit command
    :header:"Name", "Remark"
 
-    修改, c C s S
-    插入, i/I 
-    跳转, [ ' %
-    查找, / ? * # f t
-    删除, x d 
-    复制,y Y 
-    粘贴,p P
+   修改, c C s S
+   插入, i/I 
+   跳转, [ ' %
+   查找, / ? * # f t
+   删除, x d 
+   复制,y Y 
+   粘贴,p P
 
 
 有了这些，就可以精确的跳转。再加上Visusal mode 就可以精确的选择了。 vim 命令操作标准模式。
