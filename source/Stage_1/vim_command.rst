@@ -125,8 +125,8 @@ let i = i | let a=3
 
 例如把自把标题一下自动添加=号呢
 
-.. code-block::
-   
+.. code-block:: py
+
    header1
      ||
      \/
@@ -135,10 +135,11 @@ let i = i | let a=3
 
 :command:`:t.|s/./=/g` 就可以了，如果标题是中文  :command:`t.|s/./==/g`
 
-（是否哪里说明这个命令的含义？）
+t. 就是复印当前行，然后把任意字符替换成＝
 
 处理偶数行处理 
 ^^^^^^^^^^^^^^
+
 perform a substitute on every other line
 
 :command:`:g/^/ if line('.')%2|s/^/zz /`

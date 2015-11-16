@@ -38,13 +38,11 @@
 
 对于 dot graphviz 插件就有点复杂了
 
-.. code-block:: html
+.. graphviz:: 
 
-   <dot>
-    digraph G {
-       a->b;
-    }
-   </dot>  
+   digraph G {
+      a->b;
+   }
 
 来转换成   rst 格式。要就三条语句了
 

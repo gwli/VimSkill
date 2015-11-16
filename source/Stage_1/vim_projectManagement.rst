@@ -5,6 +5,7 @@ Vim 的初始介面看上去很简单了，就像notepad. 但功能没有notepad
 
 在学习篇的时候同时参考 :command:`:help windows.txt` , :command:`:help usr_07.txt` 以及 :command:`:help usr_08.txt`
 
+
 buffer,window,tab
 =================
 
@@ -59,6 +60,7 @@ vim 五种类型可以通过 :command:`:help buffertype` 查看。
 
 buffer的常用操作
 ^^^^^^^^^^^^^^^^
+
 :command:`:ls` :command:`:files` :command:`:buffers` 查看已经打开的buffer
 :command:`:file` 显示当前buffer的文件全名
 :command:`:bn`  在当前窗口显示下一个buffer
@@ -109,6 +111,7 @@ Window 的常见操作
 
 如何另外的打开窗口
 ^^^^^^^^^^^^^^^^^^
+
 vim 支持窗口的任意切开，其实所谓taglist也就是么干的。主要 是`ctrl-W`来控制，上下左右的切，并且交换buffer,以及位置都是很方便的。并且例如VS2013中的Peek也是很容易的。
 `sfind` 直接开窗口
 `top {cmd}` 可以打开一个新窗口执行命令。

@@ -45,9 +45,10 @@ vim 是练习正则表达式的最佳地方
 vim 默认是贪婪模式(最长匹配) ，非贪婪模式(最短匹配) 可以用 \{-} 表示。比如要对于字符：abcfae, abcae输入"abc.*"，将会匹配所有，直到行尾。
 
 .. code-block:: vim
+
     abcfae 
     .*     //match abcae 
-    .\{-}  //match a  (这个例子还看不太明白)
+    .\{-}  //match a  
 
 
 跨行与不跨行

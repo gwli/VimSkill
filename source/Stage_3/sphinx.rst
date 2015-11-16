@@ -16,26 +16,26 @@ sphinx 的模板用的是jinjia,类似于perl template toolkit，主要上下左
 
 例如就是封面，章，节等等。 
 
-.. code-block:: thml
+.. code-block:: html
     
-    {% extends "!layout.html" %}
-    {% set reldelim1 = '&gt;' %}
-    {% block footer %} {% endblock %}
+   {% extends "!layout.html" %}
+   {% set reldelim1 = '&gt;' %}
+   {% block footer %} {% endblock %}
 
 
 sphinx 能够实现的只用一个template engine都很容易实现。只要稍微把模板灵活一些，其实就搞定了。
 
-..  code-block:: python
+.. code-block:: python
 
-    class doc:
-          foreword = ""
-          chapters =[]
-          end=""
-    class chapter:
-          sections = []
-          titile = ""
+   class doc:
+         foreword = ""
+         chapters =[]
+         end=""
+   class chapter:
+         sections = []
+         titile = ""
 
-    foreach print anyformat
+   foreach print anyformat
 
 
 现在sphinx 已经把文档结构给解析好了。只需要实现reader 就行了。
@@ -96,7 +96,7 @@ singlehtml
 直接把需要东东都放在 header. 例如把样式表放在前面。 然后所有需要放东东都放在style.css中就行了。
 
   
-.. code-block:: thml
+.. code-block:: html
     
     {% extends "!layout.html" %}
     {% set reldelim1 = '&gt;' %}

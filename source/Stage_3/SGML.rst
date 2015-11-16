@@ -5,13 +5,13 @@ SGML
    
    digraph flow {
       
-      SGML-> HTML/XML->Dockbook->YAML->Markdown;
+      SGML-> "HTML/XML"->Dockbook->YAML->Markdown;
    }
 
 
 Docbook
 =======
 
-linux µÄÎÄµµ¸ñÊ½¶¼ÊÇÓÃµÄdocbook.À´Ð´µÄ¡£
+linux çš„æ–‡æ¡£æ ¼å¼éƒ½æ˜¯ç”¨çš„docbook.æ¥å†™çš„ã€‚
 
-²¢ÇÒ ABS_Guide_cn.pdf ¾ÍÊÇÓÃvim + DSSSLÀ´Ð´µÄ¡£
+å¹¶ä¸” ABS_Guide_cn.pdf å°±æ˜¯ç”¨vim + DSSSLæ¥å†™çš„ã€‚
