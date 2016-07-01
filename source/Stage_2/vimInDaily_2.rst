@@ -69,7 +69,10 @@ Vim 的日常应用
  #. 执行clean.bat 就OK了。    
 
 
+插入特殊字符
+============
 
+可以用输入模式下用,ctrl+k，同时可以用 :dig查看缩写。
 
 
 How to get insert date or time
