@@ -92,3 +92,10 @@ How to get insert date or time
     
    :set hls
    /[^\x00-\x7F]
+
+
+快速实现多文件的替换
+--------------------
+
+.. code-block:: bash
+   :args %s/pattern/replacement/gc |update 
