@@ -4,6 +4,7 @@ Vim 的日常应用
 
 用vim 来快速实现循环的功能
 --------------------------
+
 我们经常会一些一次性工作，但是量又有点大。写代码不值，不写的话，一个个手工删除太慢。那个时候就可以vim帮助你了。
 
 问题
@@ -98,4 +99,5 @@ How to get insert date or time
 --------------------
 
 .. code-block:: bash
+
    :args %s/pattern/replacement/gc |update 
