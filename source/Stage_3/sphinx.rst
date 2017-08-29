@@ -1,6 +1,21 @@
 sphinx
 ******
 
+
+.. image:: docutils_framework.PNG
+
+
+.. code-block:: python
+   
+   def publish(self,argv=None,usage=None,description=None,
+               settings_spec=None,settings_overrides=None,
+               config_section=None,enable_exit_status=False):
+       ...
+       self.document = self.reader.read(self.source,self.parser,self.settings)
+       self.apply_transforms()
+       output = self.writer.write(self.document,self.destination)
+       
+
 template
 ========
 
@@ -57,8 +72,23 @@ http://docutils.sf.net/docs/api/publisher.html
 从这里就可以看publish_parts 就看协议包的构造了，如何来构造了。并且每一块对应关系就有了。只要把流程搞明白了，如何实现采用什么样的pattern是自然而然的事情。
 http://docutils.sourceforge.net/docs/peps/pep-0258.html
 而整个sphinx 是建立在docutils 的基础上的。
-
+并且http://www.arnebrodowski.de/blog/write-your-own-restructuredtext-writer.html 
 哈哈，原来那些unit 测试都是采用这样的方法的设计的，采用vistor模式。
+那些继承是为了正方便修改。只改需要修改的问题。
+
+
+doctree 本身的扩展有三种:
+#. role  一种简单的inline element.
+#. directive 这种类类似于 graphviz 插件。
+#. transform 也就是添加过滤器。有点类似于LLVM 的Pass.
+#. output本身的格式化，例如html,还有template + css 可以用。
+
+.. graphviz::
+   
+   digraph doctree_flow {
+   
+     "markdown"-> nodes_tree->transform_pass->nodes_tree; 
+   }
 
 设计方法很简单
 
@@ -89,6 +119,18 @@ http://docutils.sourceforge.net/docs/peps/pep-0258.html
 
 都每个都有startag,以及endtag.
 http://docutils.sourceforge.net/docs/ref/doctree.html
+
+
+transform
+=========
+
+基本上是进来node列表，出来一个node列表。
+
+#. `transform api <http://code.nabla.net/doc/docutils/api/docutils/docutils.transforms.html>`_ 
+#. `using-rest-restructuredtext-to-create-html-snippet <http://code.activestate.com/recipes/193890-using-rest-restructuredtext-to-create-html-snippet/>`_
+#. `sphinx appapi <http://www.sphinx-doc.org/en/1.4.9/extdev/appapi.html>`_
+#. `example of transform <https://www.programcreek.com/python/example/59030/docutils.transforms.Transform>`_
+
 singlehtml
 ----------
 
@@ -130,7 +172,45 @@ http://sphinx-doc.org/extdev/nodes.html#nodes
 
 内部结构的存储，用node的链表
 
+如何添加一个role
+----------------
 
+可以参考这个 https://doughellmann.com/blog/2010/05/09/defining-custom-roles-in-sphinx/
+
+主要是两步
+
+#. 注册你的role
+
+   .. code-block:: python
+      
+      def setup(app):
+          """Install the plugin.
+          :param app: Sphinx applicaton context.
+          """
+          app.add_role("fb",fb_role)
+          return
+
+#. 写你自己的回调函数
+   
+   .. code-block:: python
+
+      def fb_role(name,rawtext,text,lineno,inliner,options,content):
+          node = make_a_node(...)
+          return [node], []
+
+
+更进一步的定制可以参考 `Docutils Hacker's Guide <http://docutils.sourceforge.net/docs/dev/hacking.html>`_ 
+
+rst 本身的解析采用的是状态机来实现的，具体的实现可以参考 :file:`/usr/local/lib/python2.7/dist-packages/docutils/parsers/rst/states.py`
 
 单个文本的转换，可以用http://docutils.sourceforge.net/docs/api/cmdline-tool.html
 这些实现，当然也可以采用pandoc来实现。
+
+如何在readthedoc上添加一个留言区
+================================
+
+可以参考 https://github.com/moorepants/dissertation/blob/master/_templates/page.html
+原理就是在模板中加入的`Disqus <https://disqus.com/>`_ ,或者自己搭一个`isso <https://github.com/posativ/isso>`_ 的comments server.
+
+
+以及如何用latex来写论文，可以参考 https://github.com/moorepants/dissertation
