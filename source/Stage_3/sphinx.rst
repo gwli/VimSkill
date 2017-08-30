@@ -2,7 +2,7 @@ sphinx
 ******
 
 
-.. image:: docutils_framework.PNG
+.. image:: /Stage_3/docutils_framework.png
 
 
 .. code-block:: python
