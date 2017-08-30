@@ -1,6 +1,15 @@
 sphinx
 ******
 
+文档的编写，是一个基础工作，从最初用的txt->sgml->docbook->markdown->restructureText,到后来的word,再到后来的wiki再到markdown,由于markdown的语法太简单，不能支持复杂的，并且通用性不强，见 `此 <http://www.wilfred.me.uk/blog/2012/07/30/why-markdown-is-not-my-favourite-language/>`_
+
+
+格式要示。也就出现这三大工具:
+
+#. `Creole <http://wikicreole.org>`_ 把各种wiki通用的语法总结成一个致语法，并且形成标准并制作相应的工具。
+#. SGML and XML docbook的语法太啰嗦。
+#. asciidoc  a2x 相应的一堆转换工具类似rst.
+#. sphinx-doc 的rst.  
 
 .. image:: /Stage_3/docutils_framework.png
 
@@ -15,6 +24,7 @@ sphinx
        self.apply_transforms()
        output = self.writer.write(self.document,self.destination)
        
+publisher 的详细说明见 http://docutils.sourceforge.net/docs/api/publisher.html
 
 template
 ========
@@ -206,11 +216,64 @@ rst 本身的解析采用的是状态机来实现的，具体的实现可以参�
 单个文本的转换，可以用http://docutils.sourceforge.net/docs/api/cmdline-tool.html
 这些实现，当然也可以采用pandoc来实现。
 
+
+标题的层级
+==========
+
+sphinx本身没有特殊符号要求，默认遇到的第一个是就一级level. 你只要保证使用的一致就行了。
+但是当文件太大，使用了各种include在一起的时候，就可能会有各种不一致。
+
+
 如何在readthedoc上添加一个留言区
 ================================
 
 可以参考 https://github.com/moorepants/dissertation/blob/master/_templates/page.html
 原理就是在模板中加入的`Disqus <https://disqus.com/>`_ ,或者自己搭一个`isso <https://github.com/posativ/isso>`_ 的comments server.
+并且添加额外的javascript 来实现它，如何添加额外的js可以参考 `how-to-load-external-javascript-in-sphinx-doc <https://stackoverflow.com/questions/37096106/how-to-load-external-javascript-in-sphinx-doc>`_
 
 
-以及如何用latex来写论文，可以参考 https://github.com/moorepants/dissertation
+以及如何用sphinx来写论文，可以参考 https://github.com/moorepants/dissertation
+以及如何用sphinx来写书，可以参考http://hyry.dip.jp/tech/book/page.html/sphinx/index.html, Python科学计算 就是用 Sphinx来写的。
+
+自定义css
+=========
+
+都可以用 template + theme 来实现。
+
+或者使用编程接口，app.addstylefile() 来实现。
+
+条件包含
+========
+
+可以采用 https://stackoverflow.com/questions/15001888/conditional-toctree-in-sphinx，也可以在 conf.py里添加代码直接发生成
+或者可以事件生成部分内容，然后把加进正式的编译中。
+
+用代码生成文档
+===============
+
+https://stackoverflow.com/questions/7250659/python-code-to-generate-part-of-sphinx-documentation-is-it-possible
+用上面的方法也行，也可以用ptyhon  相应的 `tabulate <https://pypi.python.org/pypi/tabulate>`_ , `rstcloth <https://pypi.python.org/pypi/rstcloth>`_  当然可以用插件transform来完成。
+
+
+各种rst的工具
+=============
+
+https://stackoverflow.com/questions/2746692/restructuredtext-tool-support/2747041#2747041
+
+最基本的工具:
+
+rst2html 
+   from reStructuredText to HTML
+
+rst2xml 
+   from reStructuredText to XML
+rst2latex 
+   from reStructuredText to LaTeX
+rst2odt 
+   from reStructuredText to ODF Text (word processor) document.
+rst2s5 
+   from reStructuredText to S5, a Simple Standards-based Slide Show System
+rst2man 
+   from reStructuredText to Man page
+
+
