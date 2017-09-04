@@ -24,6 +24,11 @@
 
   :command:`pandoc demo.rst -o demo.pdf --latex-engine=xelatex -V mainfont="WenQuanYi Micro Hei"`
 
+生成 word
+
+  :command:`pandoc demo.rst -o demo.docx  -V mainfont="WenQuanYi Micro Hei"`
+
+  `how-to-set-up-sublime-text-for-markdown-export-to-word <http://plaintext-productivity.net/2-05-how-to-set-up-sublime-text-for-markdown-export-to-word.html>`_
 
 Pandoc 的template
 -----------------
@@ -136,3 +141,12 @@ mutt -e "set content_type=text/html" -s "DailyToDo" email@address < ToDo.html
 但是对于一个dailyToDo来说应该是足够了。 现在想想完全用自己买一个todo应该不麻烦。
 
 
+
+是日常工作中，经常会需要对各种模式之间转换，当然pandoc也不是一个万能的。
+还需要一些专用工具，例如 
+
++------------+-------------------------------------------------------------------------------+
+|  html2pdf  | `wkhtmltopdf <https://github.com/wkhtmltopdf/wkhtmltopdf>`_                   |
++------------+-------------------------------------------------------------------------------+
+|  pdf2html  | ` pdf2htmlEX <https://github.com/coolwanglu/pdf2htmlEX/wiki/Download>`_       |
++------------+-------------------------------------------------------------------------------+
