@@ -50,6 +50,21 @@ sphinx 的模板用的是jinjia,类似于perl template toolkit，主要上下左
 
 sphinx 能够实现的只用一个template engine都很容易实现。只要稍微把模板灵活一些，其实就搞定了。
 
+各种template engine的对比 见 `此 <https://en.wikipedia.org/wiki/Comparison_of_web_template_engines>`_
+
+一个template engine应该具有的功能
+
+#. Variables
+#. Functions
+#. includes
+#. Condition inclusion
+#. Looping
+#. Evaluation
+#. Assignment
+#. Errors and exceptions
+#. il8n
+#. Natural templates
+#. Inheritance 
 .. code-block:: python
 
    class doc:
@@ -141,11 +156,34 @@ transform
 #. `sphinx appapi <http://www.sphinx-doc.org/en/1.4.9/extdev/appapi.html>`_
 #. `example of transform <https://www.programcreek.com/python/example/59030/docutils.transforms.Transform>`_
 
+.. code-block:: py
+
+   for ref in self.document.traverse(nodes.substuition_reference):
+       refname = ref['refname']
+       """
+       do something 
+       """ 
+       ref.replace_self(nodes.Text(text,text))
+
+doctree
+=======
+
+可以参考 :file:`sphinx/versioning.py` 来处理。这里面有两个函数，*merge_doctrees* 
+
+以及 *add_uids* 来实现。
+
+toc tree
+========
+
+直接用 toc来得到这个tree,同时可以用node.pformat,node.asdom().toxml()就可以生成生了。
+
 singlehtml
 ----------
 
 对于sphinx现在没有办法方便做到，singlehtml重新写一个新的builder,不过也应该不是很难。 一个简单的办法，利用模板
 直接把需要东东都放在 header. 例如把样式表放在前面。 然后所有需要放东东都放在style.css中就行了。
+
+http://www.sphinx-doc.org/en/stable/extdev/nodes.html  可以这些api.
 
   
 .. code-block:: html
@@ -247,6 +285,9 @@ sphinx本身没有特殊符号要求，默认遇到的第一个是就一级level
 
 可以采用 https://stackoverflow.com/questions/15001888/conditional-toctree-in-sphinx，也可以在 conf.py里添加代码直接发生成
 或者可以事件生成部分内容，然后把加进正式的编译中。
+`Including content based on tags <http://www.sphinx-doc.org/en/stable/markup/misc.html#directive-only>`_ 这个类似于C的#IFDEFINE
+
+当然sphinx也是支持tag来实现条件包含编译的。 https://stackoverflow.com/questions/16863444/conditionally-include-extensions
 
 用代码生成文档
 ===============
@@ -275,5 +316,29 @@ rst2s5
    from reStructuredText to S5, a Simple Standards-based Slide Show System
 rst2man 
    from reStructuredText to Man page
+
+
+宏替换功能
+===========
+
+可以由 ``.. |name| replace:: xxxxxxx``  就可以了后面用 ``|name|`` 来引用替换了。
+是用transform来实现的，可以参考 :file:`sphinx/transforms/__init__.py:124`  或者参考 :file:`sphinx/versioning.py`
+
+.. py:class:: DefaultSubstitutions  
+
+   这个来实现的。
+
+
+
+
+对于一些特殊的语法
+==================
+
+列如下划线，可以用role，再加样式表来实现。https://stackoverflow.com/questions/6518788/rest-strikethrough
+
+.. code-block:: python
+   
+   .. 
+   
 
 
