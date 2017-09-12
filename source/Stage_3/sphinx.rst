@@ -26,6 +26,26 @@ sphinx
        
 publisher 的详细说明见 http://docutils.sourceforge.net/docs/api/publisher.html
 
+
+parser 的原理
+=============
+
+采用可以重入的状态机机制，其实也就是递归模式来进行解析，每一个node 都有startag,endtag. 
+
+#. 从一个文档的开始定义一个document root.
+#. 从上到下进行逐行解析，同一级的每一个节点都是root的子节点顺序排列。
+#. 遇到子节点，进行递归进入当前节点的子节点。
+
+.. code-block::
+
+   root,
+   root.children=[.....]
+        chidren1
+           chidren[....]
+        chidren2
+        ....
+        
+最后template rendering时，也是流式不断写文件是一样用content,或者body不断append内容。
 template
 ========
 
