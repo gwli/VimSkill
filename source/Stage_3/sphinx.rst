@@ -36,7 +36,7 @@ parser 的原理
 #. 从上到下进行逐行解析，同一级的每一个节点都是root的子节点顺序排列。
 #. 遇到子节点，进行递归进入当前节点的子节点。
 
-.. code-block::
+.. code-block:: python
 
    root,
    root.children=[.....]
@@ -45,6 +45,7 @@ parser 的原理
         chidren2
         ....
         
+
 最后template rendering时，也是流式不断写文件是一样用content,或者body不断append内容。
 
 
@@ -87,6 +88,7 @@ sphinx 能够实现的只用一个template engine都很容易实现。只要稍�
 #. il8n
 #. Natural templates
 #. Inheritance 
+
 .. code-block:: python
 
    class doc:
@@ -194,21 +196,23 @@ doctree
 
 以及 *add_uids* 来实现。
 
-+--------------------------------------------------------------------+
-| document  [may begin with a title, subtitle, decoration, docinfo]  |
-|                             +--------------------------------------+
-|                             | sections  [each begins with a title] |
-+-----------------------------+-------------------------+------------+
-| [body elements:]                                      | (sections) |
-|         | - literal | - lists  |       | - hyperlink  +------------+
-|         |   blocks  | - tables |       |   targets    |
-| para-   | - doctest | - block  | foot- | - sub. defs  |
-| graphs  |   blocks  |   quotes | notes | - comments   |
-+---------+-----------+----------+-------+--------------+
-| [text]+ | [text]    | (body elements)  | [text]       |
-| (inline +-----------+------------------+--------------+
-| markup) |
-+---------+
+.. literal-block::
+
+   +--------------------------------------------------------------------+
+   | document  [may begin with a title, subtitle, decoration, docinfo]  |
+   |                             +--------------------------------------+
+   |                             | sections  [each begins with a title] |
+   +-----------------------------+-------------------------+------------+
+   | [body elements:]                                      | (sections) |
+   |         | - literal | - lists  |       | - hyperlink  +------------+
+   |         |   blocks  | - tables |       |   targets    |
+   | para-   | - doctest | - block  | foot- | - sub. defs  |
+   | graphs  |   blocks  |   quotes | notes | - comments   |
+   +---------+-----------+----------+-------+--------------+
+   | [text]+ | [text]    | (body elements)  | [text]       |
+   | (inline +-----------+------------------+--------------+
+   | markup) |
+   +---------+
 
 http://docutils.sourceforge.net/docs/ref/doctree.html
 
